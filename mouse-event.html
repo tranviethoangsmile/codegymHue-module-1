@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sự kiện chuột</title>
+</head>
+
+<body>
+    <p onmouseover="mouseover()" onmouseout="mouseout()" id="mouse_event">Hello, Everybody</p>
+    <script>
+        // dùng sự kiện addEventListener
+        // var mouse_event = document.getElementById("mouse_event");
+        // mouse_event.addEventListener("mouseover", mouseover);
+        // mouse_event.addEventListener("mouseout", mouseout);
+        // dùng phương thức onmouseover(), onmouseout()
+        function mouseover() {
+            document.getElementById("mouse_event").style.color = "red";
+        }
+
+        function mouseout() {
+            document.getElementById("mouse_event").style.color = "black"
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Good_fast_cheap</title>
+</head>
+<body>
+<h1> Choice Your Life</h1>
+<img src="fb.png" style=" left: 0px; width: 50px; height: 50px" id="hinhtron1" onclick="hinhtron1()">
+<span style="padding-left: 75px;color: blue"> Facebook</span>
+<br><br>
+<img src="sleep.jpg" style="left: 0px;width: 50px; height: 50px" id="hinhtron2" onclick="hinhtron2()">
+<span style="padding-left: 75px;color: gray;"> Sleep</span>
+<br><br>
+<img src="codegym.png" style="left: 0px; width: 50px; height: 50px" id="hinhtron3" onclick="hinhtron3()">
+<span style="padding-left: 75px;color: darkgoldenrod"> Code đến chết</span>
+
+<script>
+    let x1 = document.getElementById('hinhtron1');
+
+    function hinhtron1() {
+        x1.style.position = 'relative';
+        // x1.style.left = '0px';
+        if ((parseInt(x1.style.left) == 0)) {
+            x1.style.left = parseInt(x1.style.left) + 50 + 'px';
+        } else {
+            x1.style.left = '0px'
+        }
+        if ((parseInt(x1.style.left) == 50) && (parseInt(x2.style.left) == 50)) {
+            x3.style.left = '0px';
+        }
+        if ((parseInt(x1.style.left) == 0) && (parseInt(x2.style.left) == 0)) {
+            x3.style.left = '50px';
+        }
+    }
+
+    let x2 = document.getElementById('hinhtron2');
+
+    function hinhtron2() {
+        x2.style.position = 'relative';
+        // x2.style.left = '0px';
+        if ((parseInt(x2.style.left) == 0)) {
+            x2.style.left = parseInt(x2.style.left) + 50 + 'px';
+        } else {
+            x2.style.left = '0px'
+        }
+        if ((parseInt(x2.style.left) == 50) && (parseInt(x3.style.left) == 50)) {
+            x1.style.left = '0px';
+        }
+        if ((parseInt(x2.style.left) == 0) && (parseInt(x3.style.left) == 0)) {
+            x1.style.left = '50px';
+        }
+    }
+
+    let x3 = document.getElementById('hinhtron3');
+
+    function hinhtron3() {
+        x3.style.position = 'relative';
+        // x3.style.left = '0px';
+        if ((parseInt(x3.style.left) == 0)) {
+            x3.style.left = parseInt(x3.style.left) + 50 + 'px';
+        } else {
+            x3.style.left = '0px'
+        }
+        if ((parseInt(x3.style.left) == 50) && (parseInt(x1.style.left) == 50)) {
+            x2.style.left = '0px';
+        }
+        if ((parseInt(x3.style.left) == 0) && (parseInt(x1.style.left) == 0)) {
+            x2.style.left = '50px';
+        }
+    }
+</script>
+</body>
+</html>

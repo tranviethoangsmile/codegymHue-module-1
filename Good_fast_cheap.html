@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #goodBall{
+            margin: 0px;
+        }
+        #fastBall{
+            margin: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="goodBall" style="width: 50px; height: 50px; left: 0px;"  onclick="goodMoving()"
+        src="https://www.thethaodaiviet.vn/upload/giay/qua-bong-da-size-5-zocker-latico-new-zk5-l206-3.jpg?v=1.0.0"
+        alt="ảnh"> GOOD <br>
+    <img id="fastBall" style="width: 50px; height: 50px; left: 0px;" onclick="fastMoving()"
+        src="https://domainente.com/wp-content/uploads/2018/12/hinh-anh-qua-bong-dep-19.jpg"
+        alt="ảnh 2"> FAST <br>
+        <img  id="cheapBall" style="width: 50px; height: 50px; left: 0px;" onclick="cheapMoving()" src="https://cdnimg.vietnamplus.vn/uploaded/mtpyelagtpy/2016_09_20/france_football_2009.jpg" alt="ảnh 3"> CHEAP
+</body>
+
+</html>
+<script>
+
+    var moveGood = document.getElementById("goodBall");
+    function goodMoving() {
+        moveGood.style.position = 'relative';
+        if (parseInt(moveGood.style.left) == 0) {
+            moveGood.style.left = parseInt(moveGood.style.left) + 50 + 'px';
+        } else {
+            moveGood.style.left = '0px';
+        }
+        if( parseInt(moveGood.style.left) == 50 && parseInt(moveFast.style.left) == 50 ){
+            moveCheap.style.left = '0px';
+        }
+
+    }
+    var moveFast = document.getElementById("fastBall");
+    function fastMoving(){
+        moveFast.style.position = 'relative';
+       if(parseInt(moveFast.style.left) == 0) {
+            moveFast.style.left = parseInt(moveFast.style.left) + 50 + 'px';
+        } else {
+            moveFast.style.left = '0px';
+        }
+        if(parseInt(moveGood.style.left) == 50 && parseInt( moveCheap.style.left) == 50 ){
+            moveFast.style.left = '0px'
+        }
+
+    }
+
+    var moveCheap = document.getElementById("cheapBall");
+    function cheapMoving(){
+        moveCheap.style.position = 'relative';
+       if(parseInt( moveCheap.style.left) == 0) {
+        moveCheap.style.left = parseInt(moveCheap.style.left) + 50 + 'px';
+        } else {
+            moveCheap.style.left = '0px';
+        }
+        if( parseInt( moveCheap.style.left) == 50 && parseInt(moveFast.style.left) == 50){
+            moveGood.style.left = '0px';
+        }
+
+    }
+
+
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính năm nhuận</title>
+</head>
+
+<body>
+    <p>Nhập năm:</p><br>
+    <input id="nhap" name="nam" type="number" /><br> <br>
+    <button id="tinh_nam_nhuan" type="button" onclick="tinh()">Click me!!</button>
+    <p id="ket_qua"></p>
+</body>
+
+</html>
+<script>
+    function tinh() {
+        var year = parseInt(document.getElementById("nhap").value);
+        if (year % 4 == 0 && year % 100 !== 0 || year % 100 == 0 && year % 400 == 0) {
+            document.getElementById("ket_qua").innerHTML = year + ' là Năm nhuận';
+        } else {
+            document.getElementById("ket_qua").innerHTML = year + ' là Năm không nhuận';
+        }
+    }
+</script>

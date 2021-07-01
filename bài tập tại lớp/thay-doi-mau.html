@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thay đổi màu sắc</title>
+    <style>
+        #colorTest {
+            width: 300px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" id="colorTest">
+        <tr>
+            <th>
+                RGB(<span id="r"></span>,<span id="g"></span>,<span id="b"></span>)
+            </th>
+        </tr>
+
+    </table>
+    <p>Red</p>
+    <input type="range" min="0" max="255" id="red" oninput=colorNew()>
+    <p>Green</p>
+    <input type="range" min="0" max="255" id="green" oninput=colorNew()>
+    <p>Blue</p>
+    <input type="range" min="0" max="255" id="blue" oninput=colorNew()>
+    <script src="color.js"></script>
+
+
+</body>
+
+</html>

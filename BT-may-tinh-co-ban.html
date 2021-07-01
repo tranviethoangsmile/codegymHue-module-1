@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Máy tính cơ bản</title>
+
+    </style>
+</head>
+
+<body>
+    <h1>
+        <h1 style="font-size: 20px;"><b>Caculator</b></h1>
+        <input id="input1" type="text">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input id="input2" type="text"><br><br>
+        <button onclick="Add()">Addition(+)</button>
+        <button onclick="Sub()">Subtraction(-)</button>
+        <button onclick="Mul()">Multiplication(x)</button>
+        <button onclick="Div()">Division(:)</button>
+
+        <p id='out'></p>
+    </h1>
+</body>
+
+</html>
+<script>
+    function Add() {
+        var inpu1, input2;
+        input1 = document.getElementById("input1").value;
+        input2 = document.getElementById("input2").value;
+        input1 = parseInt(input1);
+        input2 = parseInt(input2);
+        out = input1 + input2;
+        var message = "Result division:" + out;
+        document.getElementById("out").innerText = message
+    }
+
+    function Sub() {
+        var inpu1, input2;
+        input1 = document.getElementById("input1").value;
+        input2 = document.getElementById("input2").value;
+        input1 = parseInt(input1);
+        input2 = parseInt(input2);
+        out = input1 - input2;
+        var message = "Result division:" + out;
+        document.getElementById("out").innerText = message
+    }
+
+    function Mul() {
+        var inpu1, input2;
+        input1 = document.getElementById("input1").value;
+        input2 = document.getElementById("input2").value;
+        input1 = parseInt(input1);
+        input2 = parseInt(input2);
+        out = input1 * input2;
+        var message = "Result division:" + out;
+        document.getElementById("out").innerText = message
+    }
+
+    function Div() {
+        var inpu1, input2;
+        input1 = document.getElementById("input1").value;
+        input2 = document.getElementById("input2").value;
+        input1 = parseInt(input1);
+        input2 = parseInt(input2);
+        out = input1 / input2;
+        var message = "Result division:" + out;
+        document.getElementById("out").innerText = message
+    }
+</script>

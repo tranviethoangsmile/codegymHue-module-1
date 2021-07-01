@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Máy tính đơn giản</title>
+    <style>
+        #may-tinh {
+            width: 150px;
+        }
+        
+        form {
+            width: 150px;
+        }
+    </style>
+</head>
+
+<body>
+    <form name="form">
+        <input type="number" name="displayScreen" id="displayScreen">
+    </form>
+    <table border="1" id="may-tinh">
+
+
+
+
+        <tr>
+            <th><button type="button" class="button" onclick="insert(1)" value="1">1</button></th>
+            <th><button type="button" class="button" onclick="insert(2)" value="2">2</button></th>
+            <th><button type="button" class="button" onclick="insert(3)" value="3">3</button></th>
+            <th><button type="button" class="button" onclick="insert('+')" value="+">+</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" class="button" onclick="insert(4)" value="4">4</button></th>
+            <th><button type="button" class="button" onclick="insert(5)" value="5">5</button></th>
+            <th><button type="button" class="button" onclick="insert(6)" value="6">6</button></th>
+            <th><button type="button" class="button" onclick="insert('-')" value="-">-</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" class="button" onclick="insert(7)" value="7">7</button></th>
+            <th><button type="button" class="button" onclick="insert(8)" value="8">8</button></th>
+            <th><button type="button" class="button" onclick="insert(9)" value="9">9</button></th>
+            <th><button type="button" class="button" onclick="insert('*')" value="*">*</button></th>
+        </tr>
+        <tr>
+            <th><button type="button" class="button" onclick="insert(0)" value="0">0</button></th>
+            <th><button type="button" class="button" onclick="insert('/')" value="/">/</button></th>
+            <th><button type="button" class="button" onclick="aqua(7)" value="=">=</button></th>
+            <th><button type="button" class="button" onclick="acValue()" value="AC">AC</button></th>
+        </tr>
+
+    </table>
+    <script>
+        function insert(num) {
+            document.getElementById("displayScreen").value = document.getElementById("displayScreen").value + num;
+        }
+
+        function aqua() {
+            var number = document.getElementById("displayScreen").value;
+            if (number) {
+                document.getElementById("displayScreen").value = eval(number);
+            }
+        }
+
+        function acValue() {
+            document.getElementById("displayScreen").value = '';
+        }
+    </script>
+
+</body>
+
+</html>

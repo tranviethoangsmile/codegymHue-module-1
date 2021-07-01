@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Ứng dụng vui DoYouLoveMe</title>
+    <style>
+        #mouse_event {
+            position: relative;
+            left: 20px;
+            top: 20px;
+        }
+        
+        #mouse_event:hover {
+            background-color: blue;
+        }
+        
+        #funny-img {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <p>Do You Love Me ? ? ?</p>
+    <p id="result"></p>
+
+    <button onclick="heyLove()">Yes</button>
+    <button onmouseover="mouseover()" onmouseout="mouseOut()" id="mouse_event">No</button>
+    <img id="funny-img" src="https://i.ytimg.com/vi/x-63Cr5WYlQ/maxresdefault.jpg" alt="đố anh bắt được em">
+    <script>
+        function heyLove() {
+            document.getElementById("result").innerHTML = "hey...i love you so much chịch chịch !!!";
+        }
+
+        function mouseover() {
+            var x = Math.floor(Math.random() * window.innerWidth);
+            var y = Math.floor(Math.random() * window.innerHeight);
+            document.getElementById("mouse_event").style.left = x + 'px';
+            document.getElementById("mouse_event").style.top = y + 'px';
+            document.getElementById("funny-img").style.display = "block";
+            document.getElementById("funny-img").style.marginTop = x + 'px';
+            document.getElementById("funny-img").style.marginLeft = y + 'px';
+
+
+        }
+
+        function mouseOut() {
+            document.getElementById("funny-img").style.display = "none";
+
+        }
+    </script>
+
+</body>
+
+</html>

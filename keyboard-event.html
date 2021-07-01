@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Sự kiện chuột</title>
+    <style>
+        #ballOfWC2022 {
+            width: 200px;
+            height: 200px;
+        }
+        
+        #controlKey {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="ballOfWC2022" src="https://lh3.googleusercontent.com/proxy/Me55Ev9FsBXBdFZgA2yMOwgTBgRuVY_5OCTfuAN95sKUbvVlseJgk95garqN25n9NEjZN2p8R_fNUq7bolnsjkffGa56-ECeZhRAA5V82YFzM2Du-tDSBs2NROqYLkOsQ-LjqdNIP4oz8MhT" alt="Quả bóng"> <br>
+    <script>
+        window.onload = keyboardEvent();
+
+        function keyboardEvent() {
+            window.addEventListener('keydown', moveSelection);
+        }
+
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    ball_moving_left();
+                    break;
+                case 39:
+                    ball_moving_right();
+                    break;
+                case 38:
+                    ball_moving_up();
+
+                    break;
+                case 40:
+                    ball_moving_down();
+
+                    break;
+            }
+        }
+
+        function ball_moving_up() {
+            ball.style.top = parseInt(ball.style.top) - 10 + 'px';
+        }
+
+        function ball_moving_down() {
+            ball.style.top = parseInt(ball.style.top) + 10 + 'px';
+        }
+
+        function ball_moving_left() {
+            ball.style.left = parseInt(ball.style.left) - 10 + 'px';
+        }
+
+        function ball_moving_right() {
+            ball.style.left = parseInt(ball.style.left) + 10 + 'px';
+        }
+        var ball = document.getElementById("ballOfWC2022");
+        ball.style.position = 'relative';
+        ball.style.top = '10px';
+        ball.style.left = '20px';
+    </script>
+
+</body>
+
+</html>

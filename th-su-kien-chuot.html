@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Thực hành] Sự kiện chuột</title>
+    <style>
+        #ballOfWC2022 {
+            width: 200px;
+            height: 200px;
+        }
+        
+        #controlKey {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <img id="ballOfWC2022" src="http://media.bongda.com.vn/files/hoanghai.nguyen/2018/04/20/3-1138.jpg" alt="Quả bóng"> <br>
+    <table id="controlKey">
+        <tr>
+            <th colspan="3"><button onclick="ball_moving_up()">up</button></th>
+        </tr>
+        <tr>
+            <th><button onclick="ball_moving_left()">left</button></th>
+            <th></th>
+            <th><button onclick="ball_moving_right()">Right</button> </th>
+        </tr>
+        <tr>
+            <th colspan="3"> <button onclick="ball_moving_down()">down</button></th>
+        </tr>
+    </table>
+    <script>
+        var ball = document.getElementById("ballOfWC2022");
+        ball.style.position = 'relative';
+        ball.style.top = '10px';
+        ball.style.left = '20px';
+
+        function ball_moving_up() {
+            ball.style.top = parseInt(ball.style.top) - 10 + 'px';
+        }
+
+        function ball_moving_down() {
+            ball.style.top = parseInt(ball.style.top) + 10 + 'px';
+        }
+
+        function ball_moving_left() {
+            ball.style.left = parseInt(ball.style.left) - 10 + 'px';
+        }
+
+        function ball_moving_right() {
+            ball.style.left = parseInt(ball.style.left) + 10 + 'px';
+        }
+    </script>
+
+</body>
+
+</html>
