@@ -24,10 +24,10 @@
         window.onload = keyboardEvent();
 
         function keyboardEvent() {
-            window.addEventListener('keydown', moveSelection);
+            window.addEventListener('keydown', controlTank);
         }
 
-        function moveSelection(evt) {
+        function controlTank(evt) {
             switch (evt.keyCode) {
                 case 37:
                     ball_moving_left();

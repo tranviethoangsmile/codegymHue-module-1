@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+
+
+        table {
+            border-radius: 50%;
+            background: yellowgreen;
+            position: relative;
+            top: 500px;
+            left: 100px;
+        }
+        #shotgun{
+            margin: 0;
+            padding: 0;
+        }
+        #keyShot{
+            border-radius: 1000%;
+            width: 75px;
+            height: 45px;
+            font-size: 20px;  
+            color: blue; 
+            background:rgb(234, 100, 90) ;
+            top: 450px;
+            left: 300px;
+            position: relative;
+        }
+        #keyShot:hover{
+            background: chocolate;
+        }
+    </style>
+</head>
+
+<body>
+    <img style="left: 0px; top: 0px;" id="gametank" src="tank.jpg" alt="tank">
+    <img style="left: 0px; top: 0px;" id="shotgun" src="dan.png" alt="shotgun">
+    <img style="left: 0px; top: 0px;" id="boom" src="boom.jpeg" alt="boom">
+    <table>
+        <tr>
+            <th></th>
+            <th><button onclick="tankUpMove()">&uArr;</button></th>
+            <th></th>
+
+        </tr>
+        <tr>
+            <th><button onclick="tankLeltMove()">&lArr;</button></th>
+            <th></th>
+            <th><button onclick="tankRightMove()">&rArr;</button></th>
+
+        </tr>
+        <tr>
+            <th></th>
+            <th><button onclick="tankDownMove()">&rArr;</button></th>
+            <th></th>
+
+        </tr>
+    </table>
+    <button id="keyShot" onclick = "shotGun()">SHOT</button>
+    <script>
+        window.onload = tankGameControl();
+        function tankGameControl() {
+            window.addEventListener('keydown', controlTank);
+
+
+        }
+
+        function controlTank(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    tankLeltMove();
+                    break;
+                case 39:
+                    tankRightMove();
+                    break;
+                case 38:
+                    tankUpMove();
+
+                    break;
+                case 40:
+                    tankDownMove();
+                    break;
+                case 32:
+                    shotGun();
+                    break
+
+                default:
+                    alert('please use up,down,left,right');
+                    break;
+            }
+        }
+
+
+
+
+
+        var speed = 10;
+
+        var tank = document.getElementById("gametank");
+        tank.style.position = 'relative';
+        tank.style.width = '180px';
+        tank.style.height = '80px'
+
+        var shot = document.getElementById("shotgun");
+        shot.style.position = 'relative'
+        shot.style.width = '10px';
+        shot.style.height = '10px';
+        shot.style.display = 'none';
+
+        var boomInfo = document.getElementById("boom");
+        boomInfo.style.position = 'relative';
+        boomInfo.style.width = '20px';
+        boomInfo.style.height = '20px';
+        boomInfo.style.display = 'none';
+
+
+        tank.style.transition = '0.3s';
+        shot.style.transition = '0.3s';
+
+
+
+        function tankRightMove() {
+            tank.style.transform = "rotate(0deg)";
+            var tankLeft = parseInt(tank.style.left);
+            if (parseInt(tank.style.left) + parseInt(tank.style.width) < window.innerWidth) {
+                tank.style.left = tankLeft + speed + 'px';
+            }
+
+
+
+        }
+
+        function tankLeltMove() {
+            tank.style.transform = "rotate(180deg)";
+            var tankLeft = parseInt(tank.style.left);
+            if (parseInt(tank.style.left) > 0) {
+                tank.style.left = tankLeft - speed + 'px';
+            }
+
+
+
+        }
+
+        function tankUpMove() {
+            tank.style.transform = "rotate(-90deg)";
+            var tankTop = parseInt(tank.style.top);
+            if (parseInt(tank.style.top) + speed > 0) {
+                tank.style.top = tankTop - speed + 'px';
+            }
+
+
+
+        }
+
+        function tankDownMove() {
+            tank.style.transform = "rotate(90deg)";
+            var tankTop = parseInt(tank.style.top);
+            if (parseInt(tank.style.top) + parseInt(tank.style.width) + speed < window.innerHeight) {
+                tank.style.top = tankTop + speed + 'px';
+            }
+
+
+        }
+
+        function shotGun() {
+            boomInfo.style.display = 'none';
+            shot.style.display = 'block';
+            setInterval(shotMove, 10);
+        }
+
+
+        function shotMove() {
+
+            var shotLeft = parseInt(shot.style.left);
+            if (parseInt(shot.style.left) + parseInt(shot.style.width) < window.innerWidth) {
+                shot.style.left = shotLeft + 10 + 'px'
+            }
+            checkXYshot()
+          
+        }
+
+        function checkXYshot() {
+            if (parseInt(shot.style.left) + parseInt(shot.style.width) == window.innerWidth) {
+                boomInfo.style.display = 'block';
+                // boomInfo.style.top = '90px';
+                boomInfo.style.left = '1400px'; 
+
+                shot.style.display = 'none';
+                shot.style.left = '0px';
+                shot.tyle.top = '0px';
+
+
+            }
+        }
+       
+
+    </script>
+</body>
+
+</html>
