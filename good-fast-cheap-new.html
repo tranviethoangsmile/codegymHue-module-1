@@ -8,10 +8,17 @@
 </head>
 <body>
     <p><b>GOOD - FAST - CHEAP</b></p>
-    <img onclick="_ball_good()" onmouseover="this.style.width = '110px'" onmouseout="this.style.width = '100px'"id="good" style="width: 100px; height: 100px; left: 0px;" src="https://images-na.ssl-images-amazon.com/images/I/61Jigwd1kKL._AC_SL1500_.jpg" alt=""> <br> <br>
-    <img onclick="_ball_fast()" onmouseover="this.style.width = '110px'" onmouseout="this.style.width = '100px'" id="fast" style="width: 100px; height: 100px; left: 0px;" src="https://cdn02.plentymarkets.com/zkz64ybyye6y/item/images/2626/full/2625--Handball-Groesse-1--001.jpg" alt=""> <br> <br>
+    <img onclick="_ball_good()" onmouseover="this.style.width = '110px'" onmouseout="this.style.width = '100px'"id="good" style="width: 100px; height: 100px; left: 0px;" src="https://images-na.ssl-images-amazon.com/images/I/61Jigwd1kKL._AC_SL1500_.jpg" alt="">
+     <span><img style="width: 50px; height: 50px; display: block;" id="led_good_off" src="https://images.pexels.com/photos/2585420/pexels-photo-2585420.jpeg" alt=""></span> 
+     <span><img style="width: 50px; height: 50px; display: none;" id="led_good_on" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR698iZI6Oal3_fXWOIgPpMlHV3WdmieF206A&usqp=CAU" alt=""></span> <br> <br>
+    <img onclick="_ball_fast()" onmouseover="this.style.width = '110px'" onmouseout="this.style.width = '100px'" id="fast" style="width: 100px; height: 100px; left: 0px;" src="https://cdn02.plentymarkets.com/zkz64ybyye6y/item/images/2626/full/2625--Handball-Groesse-1--001.jpg" alt=""> 
+    <span><img style="width: 50px; height: 50px; display: block;" id="led_fast_off" src="https://images.pexels.com/photos/2585420/pexels-photo-2585420.jpeg" alt=""></span>
+     <span><img style="width: 50px; height: 50px; display: none;" id="led_fast_on" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR698iZI6Oal3_fXWOIgPpMlHV3WdmieF206A&usqp=CAU" alt=""></span> <br> <br>
     <img onclick="_ball_cheap()" onmouseover="this.style.width = '110px'" onmouseout="this.style.width = '100px'" id="cheap" style="width: 100px; height: 100px; left: 0px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQfIxgfNUmwbvclNkRyKAHAamRj8PxLgHy_Aw&usqp=CAU" alt="">
+    <span><img style="width: 50px; height: 50px; display: block;" id="led_cheap_off" src="https://images.pexels.com/photos/2585420/pexels-photo-2585420.jpeg" alt=""></span>
+     <span><img style="width: 50px; height: 50px; display: none;" id="led_cheap_on" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR698iZI6Oal3_fXWOIgPpMlHV3WdmieF206A&usqp=CAU" alt=""></span>
     <script>
+     
 
         var _left_Good = document.getElementById("good");
         function _ball_good(){
@@ -27,6 +34,7 @@
             if(parseInt(_left_Good.style.left) == 0 && parseInt( _left_Fast.style.left) == 0 ){
                 _left_Cheap.style.left = '50px';
             }
+            checkLedOnOff()
 
         }
 
@@ -44,7 +52,7 @@
             if(parseInt(_left_Cheap.style.left)==0 &&  parseInt(_left_Cheap.style.left)== 0 ){
                 _left_Good.style.left = '50px';
             }
-          
+            checkLedOnOff()
 
         }
          
@@ -63,7 +71,43 @@
             if(parseInt(_left_Good.style.left) == 0 && parseInt(_left_Cheap.style.left)== 0){
                 _left_Fast.style.left = '50px';
             }
+            checkLedOnOff()
            
+        }
+        
+        function checkLedOnOff(){
+            // điều khiển đèn good
+            var led_good_On = document.getElementById("led_good_on");
+            var led_good_Off = document.getElementById("led_good_off");
+            if(parseInt(_left_Good.style.left) == 50){
+                led_good_On.style.display = 'block';
+                led_good_Off.style.display = 'none'
+            }else{
+                led_good_On.style.display = 'none';
+                led_good_Off .style.display = 'block';
+            }
+// điều khiển đèn fast
+            var led_fast_On = document.getElementById("led_fast_on");
+            var led_fast_Off = document.getElementById("led_fast_off");
+            if(parseInt(_left_Fast.style.left) == 50){
+                led_fast_On.style.display = 'block';
+                led_fast_Off.style.display = 'none';
+            }else{
+                led_fast_On.style.display = 'none';
+                led_fast_Off .style.display = 'block';
+            }
+            // điều khiển đèn cheap
+
+            var led_cheap_On = document.getElementById("led_cheap_on");
+            var led_cheap_Off = document.getElementById("led_cheap_off");
+            if(parseInt(_left_Cheap.style.left) == 50){
+                led_cheap_On.style.display = 'block';
+                led_cheap_Off.style.display = 'none';
+            }else{
+                led_cheap_On.style.display = 'none';
+                led_cheap_Off .style.display = 'block';
+            }
+
         }
        
 
