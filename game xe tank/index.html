@@ -22,31 +22,47 @@
             top: 500px;
             left: 100px;
         }
-        #shotgun{
+
+        #shotgun {
             margin: 0;
             padding: 0;
         }
-        #keyShot{
+
+        #keyShot {
             border-radius: 1000%;
             width: 75px;
             height: 45px;
-            font-size: 20px;  
-            color: blue; 
-            background:rgb(234, 100, 90) ;
+            font-size: 20px;
+            color: blue;
+            background: rgb(234, 100, 90);
             top: 450px;
             left: 300px;
             position: relative;
         }
-        #keyShot:hover{
+
+        #keyShot:hover {
             background: chocolate;
         }
+
+        #am-thanh-nen {
+            display: none;
+        }
+        
+        #am-thanh-sung{
+            display: none;
+        }
+        body{
+            background-image: src = "tank-map.jpg";
+        }
     </style>
+
 </head>
 
 <body>
     <img style="left: 0px; top: 0px;" id="gametank" src="tank.jpg" alt="tank">
     <img style="left: 0px; top: 0px;" id="shotgun" src="dan.png" alt="shotgun">
     <img style="left: 0px; top: 0px;" id="boom" src="boom.jpeg" alt="boom">
+
     <table>
         <tr>
             <th></th>
@@ -67,16 +83,23 @@
 
         </tr>
     </table>
-    <button id="keyShot" onclick = "shotGun()">SHOT</button>
+    <button id="keyShot" onclick="shotGun()">SHOT</button>
+    <!-- <audio autoplay controls loop id="am-thanh-nen">
+        <source src="am-thanh-nen-chien-tranh.mp3">
+    </audio> -->
+    <p id="addAdioShot"></p>
+
+
+
     <script>
         window.onload = tankGameControl();
         function tankGameControl() {
             window.addEventListener('keydown', controlTank);
-
-
+            insertAudioTank()   
         }
 
         function controlTank(evt) {
+             
             switch (evt.keyCode) {
                 case 37:
                     tankLeltMove();
@@ -136,6 +159,8 @@
             if (parseInt(tank.style.left) + parseInt(tank.style.width) < window.innerWidth) {
                 tank.style.left = tankLeft + speed + 'px';
             }
+            setImgInfo()
+            insertAudioTank()
 
 
 
@@ -147,6 +172,8 @@
             if (parseInt(tank.style.left) > 0) {
                 tank.style.left = tankLeft - speed + 'px';
             }
+            setImgInfo()
+            insertAudioTank()
 
 
 
@@ -158,6 +185,8 @@
             if (parseInt(tank.style.top) + speed > 0) {
                 tank.style.top = tankTop - speed + 'px';
             }
+            setImgInfo()
+            insertAudioTank()
 
 
 
@@ -169,6 +198,8 @@
             if (parseInt(tank.style.top) + parseInt(tank.style.width) + speed < window.innerHeight) {
                 tank.style.top = tankTop + speed + 'px';
             }
+            setImgInfo()
+            insertAudioTank()
 
 
         }
@@ -177,6 +208,7 @@
             boomInfo.style.display = 'none';
             shot.style.display = 'block';
             setInterval(shotMove, 10);
+            insertAudioShot() 
         }
 
 
@@ -187,14 +219,15 @@
                 shot.style.left = shotLeft + 10 + 'px'
             }
             checkXYshot()
-          
+            
+
         }
 
         function checkXYshot() {
             if (parseInt(shot.style.left) + parseInt(shot.style.width) == window.innerWidth) {
                 boomInfo.style.display = 'block';
                 // boomInfo.style.top = '90px';
-                boomInfo.style.left = '1400px'; 
+                boomInfo.style.left = '1400px';
 
                 shot.style.display = 'none';
                 shot.style.left = '0px';
@@ -203,7 +236,29 @@
 
             }
         }
-       
+
+        function setImgInfo() {
+            shot.style.top = tank.style.top;
+            shot.style.left = tank.style.left;
+
+        }
+
+
+        function insertAudioShot() {
+            document.getElementById("addAdioShot").innerHTML = ` 
+         <audio autoplay controls loop id="am-thanh-sung">
+        <source src="am-thanh-sung.mp3">
+  </audio>;`
+        }
+
+
+         function insertAudioTank(){
+            document.getElementById("addAdioShot").innerHTML = ` 
+         <audio autoplay controls id="am-thanh-nen">
+        <source src="am-thanh-xe-tank.mp3">
+  </audio>;`
+         }
+
 
     </script>
 </body>
