@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Sinh bảng cửu chương</title>
+</head>
+
+<body>
+    <script>
+        var table = "<table border = '1'>";
+            for(var i = 2; i<10; i ++){
+                table = table + "<tr>";
+                    for(var j = 1; j <10; j ++){
+                        table = table + "<th>" + i + 'x' + j + '=' + (i * j) + "<th>";
+                    }
+                    table = table + "</tr>";
+            }
+            table = table + "</table>";
+            document.write(table);
+
+
+
+    </script>
+
+</body>
+
+</html>
