@@ -47,12 +47,13 @@
         #am-thanh-nen {
             display: none;
         }
-        
-        #am-thanh-sung{
+
+        #am-thanh-sung {
             display: none;
         }
-        body{
-            background-image: src = "tank-map.jpg";
+
+        body {
+            background-image: src="tank-map.jpg";
         }
     </style>
 
@@ -95,11 +96,11 @@
         window.onload = tankGameControl();
         function tankGameControl() {
             window.addEventListener('keydown', controlTank);
-            insertAudioTank()   
+            insertAudioTank()
         }
 
         function controlTank(evt) {
-             
+
             switch (evt.keyCode) {
                 case 37:
                     tankLeltMove();
@@ -208,7 +209,7 @@
             boomInfo.style.display = 'none';
             shot.style.display = 'block';
             setInterval(shotMove, 10);
-            insertAudioShot() 
+            insertAudioShot()
         }
 
 
@@ -219,7 +220,7 @@
                 shot.style.left = shotLeft + 10 + 'px'
             }
             checkXYshot()
-            
+
 
         }
 
@@ -238,8 +239,8 @@
         }
 
         function setImgInfo() {
-            shot.style.top = tank.style.top;
-            shot.style.left = tank.style.left;
+            shot.style.top = parseInt(tank.style.top) + 40 + 'px';
+            shot.style.left = parseInt(tank.style.left) + parseInt(tank.style.width) + 'px';
 
         }
 
@@ -252,12 +253,12 @@
         }
 
 
-         function insertAudioTank(){
+        function insertAudioTank() {
             document.getElementById("addAdioShot").innerHTML = ` 
          <audio autoplay controls id="am-thanh-nen">
         <source src="am-thanh-xe-tank.mp3">
   </audio>;`
-         }
+        }
 
 
     </script>

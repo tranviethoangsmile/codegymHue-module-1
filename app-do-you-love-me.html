@@ -12,11 +12,11 @@
             left: 20px;
             top: 20px;
         }
-        
+
         #mouse_event:hover {
             background-color: blue;
         }
-        
+
         #funny-img {
             display: block;
             width: 100px;
@@ -43,11 +43,11 @@
         function mouseover() {
             var x = Math.floor(Math.random() * window.innerWidth);
             var y = Math.floor(Math.random() * window.innerHeight);
-            document.getElementById("mouse_event").style.left = x + 'px';
-            document.getElementById("mouse_event").style.top = y + 'px';
+            document.getElementById("mouse_event").style.left = `${x}px`;
+            document.getElementById("mouse_event").style.top = `${y}px`;
             document.getElementById("funny-img").style.display = "block";
-            document.getElementById("funny-img").style.marginTop = x + 'px';
-            document.getElementById("funny-img").style.marginLeft = y + 'px';
+            document.getElementById("funny-img").style.marginTop = `${x}px`;
+            document.getElementById("funny-img").style.marginLeft = `${y}px`;
 
 
         }
