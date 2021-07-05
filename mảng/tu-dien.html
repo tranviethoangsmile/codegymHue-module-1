@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Từ điển cá nhận</title>
+    <style>
+        fieldset{
+            width: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <fieldset>
+        <legend>Từ điển</legend>
+        <table>
+            <tr>
+                <th><label for="tu_moi">Từ mới:</label></th>
+                <th> <input type="text" id="tu_moi"> </th>
+            </tr>
+            <tr>
+                <th> <label for="noi_dung_tu_moi">Nhập nội dung</label>:</th>
+                <th> <input type="text" id="noi_dung_tu_moi"> </th>
+            </tr>
+            <tr>
+                <th> <label for="tu_can_tim">Từ cần tìm:</label>:</th>
+                <th> <input type="text" id="tu_can_tim"> </th>
+            </tr>
+        </table> <br>
+
+        <button onclick="add_new()">Thêm từ mới</button>
+        <button onclick="find()">Tìm từ vựng</button>
+        <p id="result_tu_vung"></p>
+        <p id="result_noi_dung"></p>
+
+
+
+
+    </fieldset>
+    <script>
+
+        var tuVungArray = new Array(); //khai báo mảng chứa từ vựng
+        var noidungArray = new Array(); //khai báo mảng chứ nội dung
+        function add_new() {
+            // nhận nội dung từ vựng và từ vựng
+            var tu_vung = document.getElementById("tu_moi").value;
+            var noi_dung_tu_vung = document.getElementById("noi_dung_tu_moi").value;
+            tuVungArray.push(tu_vung);
+            noidungArray.push(noi_dung_tu_vung);
+            if (tu_vung === '' && noi_dung_tu_vung === '') {
+                alert('không bỏ trống');
+            }
+            alert("thêm thành công");
+            console.log(tuVungArray);
+        }
+
+        function find() {
+            var tim_kiem = document.getElementById("tu_can_tim").value;
+            if (tim_kiem === '') {
+                alert("nhập từ cần tìm");
+            }
+            var isTuVung = false;
+            for (let i = 0; i < tuVungArray.length; i++) {
+                
+                if (tim_kiem == tuVungArray[i]) {
+                    document.getElementById("result_tu_vung").innerHTML = 'Từ cần tìm: ' + tuVungArray[i];
+                    document.getElementById("result_noi_dung").innerHTML = 'nội dung: ' + noidungArray[i];
+                    isTuVung = true;
+                }
+            }
+            if(!isTuVung){
+                alert("không tồn tại");
+            }
+        }
+
+
+    </script>
+
+
+</body>
+
+</html>
