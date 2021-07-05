@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Faking Textarea on Typing</title>
+</head>
+
+<body>
+    <center>
+        <h2>Faking Textarea on Typing</h2>
+        <form>
+            <textarea id="demo" name="txt" cols="40" rows="10" onkeydown="fake()"></textarea>
+            <p id="result"></p>
+        </form>
+    </center>
+    <script>
+        
+
+        var fakeArray = ['T', 'Ô', 'I', 'L', 'À', 'M', 'Ộ', 'T', 'T', 'H', 'Ằ', 'N', 'G', 'N', 'G', 'Ố', 'C', '!', '!', '!'];
+        var str = '';
+        function fake() {
+            let text = document.getElementById("demo").value;
+            let j = text.length;
+            if (j > 0) {
+                for (let i = 0; i <= j; i++) {
+                    str = str + fakeArray[i];
+                    if (i == 20) {
+                        document.getElementById("demo").value = '';
+                        str = '';
+                    }
+                }
+            }
+            document.getElementById("demo").value = str;
+            str = '';
+            setTimeout("fake()", 1);
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
