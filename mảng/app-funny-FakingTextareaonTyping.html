@@ -12,53 +12,47 @@
     <center>
         <h2>Faking Textarea on Typing</h2>
         <form>
-            <textarea id="demo" name="demo" cols="40" rows="10" onkeydown="fake()"></textarea>
-            
+            <textarea id="demo" name="demo" cols="40" rows="10" oninput="fake()"></textarea>
+
         </form>
     </center>
     <script>
-        
+        var fakeKT =
+            [
+                't',
+                'o',
+                'i',
+                ' ',
+                'l',
+                'a',
+                ' ',
+                't',
+                'h',
+                'a',
+                'n',
+                'g',
+                ' ',
+                'n',
+                'g',
+                'o',
+                'c'
 
-        let array = [];
-    let str = "";
-    array[1] ='T';
-    array[2] ='Ô';
-    array[3] ='I';
-    array[4] =' ';
-    array[5] ='L';
-    array[6] ='À';
-    array[7] =' ';
-    array[8] ='M';
-    array[9] ='Ộ';
-    array[10] ='T';
-    array[11] =' ';
-    array[12] ='T';
-    array[13] ='H';
-    array[14] ='Ằ';
-    array[15] ='N';
-    array[16] ='G';
-    array[17] =' ';
-    array[18] ='N';
-    array[19] ='G';
-    array[20] ='Ố';
-    array[21] ='C';
-    array[22] ='!';
+            ]
+        var str = '';
 
-    function fake()
-    {
-        let text = document.getElementById("demo").value;
-        for(let i = 1; i <= text.length; i++)
-        {
-            str = str + array[i];
-            if (i === 22)
-            {
-                str = "";
+        var i = 0;
+        function fake() {
+            var text = document.getElementById("demo").value;
+            var textLength = text.length;
+
+            for (; i < textLength; i++) {
+                if (textLength > fakeKT.length) {
+                    str = str ;
+                } else str = str + fakeKT[i];
             }
+            document.getElementById("demo").value = str;
         }
-        document.getElementById("demo").value = str;
-        str = "";
-        setTimeout("fake()", 1);
-    }
+
 
 
 
