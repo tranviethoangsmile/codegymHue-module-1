@@ -1,61 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[*Bài tập] Luyện tập vòng lặp 01</title>
 </head>
+
 <body>
+    <!-- bài 7 -->
+    <button onclick="check()"> Chơi</button>
     <script>
-       //Bài 1 
-    //    let i = 0;
-    //    while(i < 100){
-    //        console.log(i);
-    //        if(i == 99){
-    //            alert("done");
-    //        }
-    //        i++;
+        //Bài 1 
+        //    let i = 0;
+        //    while(i < 100){
+        //        console.log(i);
+        //        if(i == 99){
+        //            alert("done");
+        //        }
+        //        i++;
 
-    //    }
-
-
-    // bài 2
-
-    //   var input = parseInt(prompt('Nhập nhiệt độ'));
-    //     while(input < 20){
-    //         alert('Tăng nhiệt độ');
-    //         input = parseInt(prompt('Nhập nhiệt độ'));
-
-    //     }
-    //     while(input > 100){
-    //         alert('giảm nhiệt độ');
-    //         input = parseInt(prompt('Nhập nhiệt độ'));
-    //     }
+        //    }
 
 
-    // bài 3;
+        // bài 2
 
-    //   var a =0;
-    //     var b =1;
-    //     var c=0;
-    //     var i=1;
-    //     while(i<19){
-    //         if(i==1){
-    //             console.log(a);
-    //         }
-    //         if(i==2){
-    //             console.log(b);
-    //         }
-    //         c = a+b;
-    //         a = b;
-    //         b = c;
-    //         console.log(c);
-    //         i++;
-        
-        
-        
-        
+        //   var input = parseInt(prompt('Nhập nhiệt độ'));
+        //     while(input < 20){
+        //         alert('Tăng nhiệt độ');
+        //         input = parseInt(prompt('Nhập nhiệt độ'));
+
+        //     }
+        //     while(input > 100){
+        //         alert('giảm nhiệt độ');
+        //         input = parseInt(prompt('Nhập nhiệt độ'));
+        //     }
+
+
+        // bài 3;
+
+        //   var a =0;
+        //     var b =1;
+        //     var c=0;
+        //     var i=1;
+        //     while(i<19){
+        //         if(i==1){
+        //             console.log(a);
+        //         }
+        //         if(i==2){
+        //             console.log(b);
+        //         }
+        //         c = a+b;
+        //         a = b;
+        //         b = c;
+        //         console.log(c);
+        //         i++;
+
+
+
+
         // }
 
 
@@ -103,25 +107,50 @@
 
         // bài 6
 
-        var a = 0;
-       var i = 0;
-       var tong = 0;
-       while(a<=30){
-           if(i%7==0){
-               tong+=i;
-               a++;
-           }
-           i++;
-       }
-       console.log(tong);
+        // var a = 0;
+        // var i = 1;
+        // var tong = 0;
+        // while (a <= 30) {
+        //     if (i % 7 == 0) {
+        //         tong += i;
+        //         a++;
+        //         document.write(i + "<br>")
+
+        //     }
+        //     i++;
+
+        // }
+        // document.write("Tổng = " + tong);
+
+
+        // bài 7 game đoán số.
+        function check() {
+            var num = parseInt(prompt("nhập số bạn chọn 1 > 10: "));
+            var numRandom = Math.floor(Math.random() * 10);
+            var i = 0;
+            while (i < 3) {
+                if (num == numRandom) {
+                    alert("chúc mừng bạn đoán đúng");
+                    break;
+                } else {
+                    alert("bạn đoán sai rồi");
+                    num = parseInt(prompt("nhập số bạn chọn: "));
+
+                }
+                i++;
+
+            }
+        }
 
 
 
 
-       
+
+
 
 
 
     </script>
 </body>
+
 </html>

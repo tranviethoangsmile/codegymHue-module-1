@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var num = parseInt(prompt("input num:"))
+        var isSNT = true;
+        function isPrime(num) {
+            if (num < 2) {
+                isSNT = false;
+            } else {
+                for (let i = 2; i < num; i++) {
+                    if (num % i == 0) {
+                        isSNT = false;
+                        break;
+                    }
+                }
+            }
+            if(isSNT == true){
+                document.write(num + 'is SNT');
+            }else{
+                document.write(num + 'not snt');
+            }
+        }
+        isPrime(num);
+
+        // function isPrime2(number){
+        //     if (number < 2) return false;
+        //     for (let i = 2; i< number; i++){
+        //         if (number % i == 0) return false;
+        //     }
+        //     return true;
+        // }
+
+        // if (isPrime2(num)) {
+        //     alert("num là snt");
+        // } else {
+        //     alert("num kpsnt")
+        // }
+    </script>
+
+</body>
+
+</html>
