@@ -9,17 +9,66 @@
 </head>
 
 <body>
+    <tr ></tr>
     <script>
+        // var table = "<table border = '1'>";
+        //     for(var i = 2; i<10; i ++){
+        //         table = table + "<tr>";
+        //             for(var j = 1; j <10; j ++){
+        //                 table = table + "<th>" + i + 'x' + j + '=' + (i * j) + "<th>";
+        //             }
+        //             table = table + "</tr>";
+        //     }
+        //     table = table + "</table>";
+        //     document.write(table);
+
+
+
+        // var i = 1;
+
+        // var table = "<table border = '1'>";
+        // while (i < 10) {
+        //     table += "<tr>";
+        //     var j = 1;
+        //     while (j <= 10) {
+        //         table = table + "<td>" + i + "x" + j + "=" + (i * j) + "</td>"
+        //         j++;
+        //     }
+        //     table += "</tr>"
+        //     i++;
+        // }
+        // table += "</table>"
+        // document.write(table);
+
+
+        var i = 1;
+
+        
         var table = "<table border = '1'>";
-            for(var i = 2; i<10; i ++){
-                table = table + "<tr>";
-                    for(var j = 1; j <10; j ++){
-                        table = table + "<th>" + i + 'x' + j + '=' + (i * j) + "<th>";
-                    }
-                    table = table + "</tr>";
-            }
-            table = table + "</table>";
-            document.write(table);
+
+        do {
+            table += "<tr>"
+                i++;
+                var j = 1;
+                
+            do {
+                // if( i %2 != 0){
+                //     table += `<td style="background: red;" >${i} x ${j} = ${i*j} </td>`
+                // }else{
+                //     table += `<td style="background: blue;" >${i} x ${j} = ${i*j} </td>`
+                // }
+                table += `<td style="background-color:${i%2==0? 'green': 'red'}">${i} x ${j} = ${i*j} </td>`
+             
+                j++
+                } while (j < 10);
+
+            table += "</tr>";
+
+
+
+        } while (i < 10);
+        table += "</table>"
+        document.write(table);
 
 
 
