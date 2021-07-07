@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        // var arr = [1,2,3,4,5,6,7,8,9];
+
+
+        // console.log(arr.join(';'));
+
+
+
+        // var arr = new Array();
+        // var size = parseInt(prompt('input size: '))
+        // var j = 0;
+
+        // while(j < size){
+        //     var x = parseInt(prompt("input Num: "));
+        //     arr.push(x);
+        //     j++;
+        // }
+        // console.log(arr.join(';'));
+
+
+
+        // var arr = [];
+        // var size = parseInt(prompt("Input Size:"));
+        // var j = 0;
+        // while(j < size){
+        //     arr[j] = Math.floor(Math.random() *11);
+        //     j++;
+        // }
+        // for(let i = 0; i < arr.length; i++){
+        //   document.write(arr[i] + ';')
+        // }
+        // console.log(arr.join(';'));
+
+
+
+
+        // var arr = [];
+        // var size = 20;
+        // var j = 0;
+        // var value = 40;
+        // while (j < size) {
+        //     arr[j] = Math.floor(Math.random() * 51);
+        //     j++;
+
+
+        // }
+        // console.log(arr);
+        // var ishave = false;
+        // for (let i = 0; i < arr.length; i++) {
+            
+        //     if (arr[i] == value) {
+        //        ishave = true;
+        //        console.log(i)
+        //        break;
+        //     } 
+        // }
+        // if(!ishave){
+        //     alert('no');
+        // }else{
+        //     alert('có');    
+        // }
+
+
+
+
+
+        // Bài 3
+
+        // tạo mảng 20 số 10 - 25. Nhập số bất kì kiểm tra xem có có bao nhiêu lần xuất hiện số đó và vị trí của chúng.
+
+
+    //     var arr = [];
+    //     var size = 20;
+    //     var newArr = new Array();
+    //     var ishave = true;
+    //    for(let i = 0; i < size; i++){
+    //     arr[i] = Math.floor(Math.random()*16)+10;
+    //    }
+    //    var num = parseInt(prompt('Input số cần tìm: '));
+    //    for(let i = 0; i < arr.length; i++){
+    //        if(arr[i] == num){
+    //            newArr.push(i);
+    //        }
+
+    //    }
+    //    console.log('mảng số tự nhiên:' + arr);
+    //    console.log('Số lần xuất hiện: ' + newArr.length);
+    //    console.log('Vị trí sinh ra số cần tìm: ' + newArr);
+      
+
+
+    // Bài 4
+
+    // Sinh ra mảng 2 chiều, 5 dòng 7 cột. số ngẫu nhiên 10 - 90;
+    // var arr = [[],[],[],[],[]];
+    // for(i = 0; i < 5; i++){
+    //     for(j = 0; j < 7; j++){
+    //         arr[i][j] = Math.floor(Math.random()*81)+10;
+    //     }
+    // }
+    // console.log(arr);
+
+
+
+    // cách 2
+    var arr = [];
+    for(var i = 0; i < 5; i++){
+      var arrChild =[]
+        for(var j = 0; j < 7; j++){
+            var arrChildChild = [];
+            for(k = 0; k < 10; k++){
+                arrChildChild[k] = Math.floor(Math.random()*81)+10;
+            }
+            arrChild[j] = arrChildChild;
+        } 
+        arr[i] = arrChild;
+    }
+    console.log(arr);
+
+
+
+
+
+
+
+
+
+
+        
+
+
+       
+
+
+
+
+
+       
+
+    </script>
+
+</body>
+
+</html>
