@@ -10,26 +10,26 @@
 
 <body>
     <script>
-        var num = parseInt(prompt("input num:"))
-        var isSNT = true;
-        function isPrime(num) {
-            if (num < 2) {
-                isSNT = false;
-            } else {
-                for (let i = 2; i < num; i++) {
-                    if (num % i == 0) {
-                        isSNT = false;
-                        break;
-                    }
-                }
-            }
-            if(isSNT == true){
-                document.write(num + 'is SNT');
-            }else{
-                document.write(num + 'not snt');
-            }
-        }
-        isPrime(num);
+        // var num = parseInt(prompt("input num:"))
+        // var isSNT = true;
+        // function isPrime(num) {
+        //     if (num < 2) {
+        //         isSNT = false;
+        //     } else {
+        //         for (let i = 2; i < num; i++) {
+        //             if (num % i == 0) {
+        //                 isSNT = false;
+        //                 break;
+        //             }
+        //         }
+        //     }
+        //     if(isSNT == true){
+        //         document.write(num + 'is SNT');
+        //     }else{
+        //         document.write(num + 'not snt');
+        //     }
+        // }
+        // isPrime(num);
 
         // function isPrime2(number){
         //     if (number < 2) return false;
@@ -44,6 +44,29 @@
         // } else {
         //     alert("num kpsnt")
         // }
+
+
+
+        var num = parseInt(prompt('Inout num:'))
+        var isSNT = true;
+        function checkSNT(num){
+            if(num < 2){
+                isSNT = false;
+            }else{
+                for(let i =2; i < num; i++){
+                    if(num %i == 0){
+                        isSNT = false;
+                        break;
+                    }
+                }
+            }
+            if(isSNT == true){
+                alert('là phải snt');
+            }else{
+                alert("không phải là số nguyên tố");
+            }
+        }
+        checkSNT(num);
     </script>
 
 </body>
