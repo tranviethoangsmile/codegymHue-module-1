@@ -44,16 +44,86 @@
 
         // bài 3;
 
-        var arrs = [ 'c', 's', 'c', 2, 6, 1 ];
-        var newArray = new Array();
-        
-        for(let i = 0; i < arrs.length; i++){
-            if(typeof arrs[i] === number){
-                newArray.push(arrs[i]);
-                console.log(arrs[i])    
+
+        //   var stringInput = prompt('Input: ');
+        //   var arrs = [];
+        //   for(let i = 0; i < stringInput.length; i++){
+        //       arrs.push(stringInput[i]);
+        //   }
+        //   document.write(`mảng ${arrs} có ${arrs.length} ký tự <br><br>`);
+
+        //   var number = '0123456789';
+        // var count = 0;
+
+        // for(let i = 0; i <arrs.length; i++ ){
+        //     if(number.indexOf(arrs[i]) !== -1){
+        //         count++;
+        //     }
+        // }
+        // document.write(`hàm ${arrs} có ${count} ký tự số`);
+
+
+        // bài 4
+
+
+        // var stringInput = prompt('Input: ');
+
+        // var arrs = [];
+
+        // for(let i =0; i < stringInput.length; i++){
+
+        //     arrs.push(stringInput[i]);
+        // }
+        // document.write(`Chuỗi ${stringInput} có ${arrs.length} Kí tự`);
+
+
+        // bài 5
+
+        // var stringOne = prompt('Input String 1: ')
+        // var stringTwo = prompt('Input String 2: ')
+        // var isString = true;
+
+        // if (stringOne.length != stringTwo.length) {
+        //     isString = false;
+        // } else {
+        //     for (let i = 0; i < stringOne.length; i++) {
+        //         if (stringOne[i] === stringTwo[i]) {
+        //             isString = true;
+
+        //         } else {
+        //             isString = false;
+
+        //         }
+        //     }
+        //     if(isString == true){
+        //         document.write('Hai chuỗi giống nhau')
+        //     }else{
+        //         document.write('Hai chuỗi khác nhau')
+
+        //     }
+        // }
+
+
+
+        // bài 6
+
+       
+
+        var stringInput = ["thích", "-xem bóng đá", "-", "-không biết chơi", "-đá bóng"];
+        for (let i = 0; i < stringInput.length; i++) {
+            stringInput[i] = stringInput[i].split("")
+            for(let j = 0; j < stringInput[i].length; j++){
+                if(stringInput[i][j] == "-"){
+                    stringInput[i][j] = "_"
+                }
             }
+            stringInput[i] = stringInput[i].join('');
+
+
         }
-        console.log('số kí tự số là: ' + newArray.length);
+        document.write(stringInput);
+
+
 
 
 
