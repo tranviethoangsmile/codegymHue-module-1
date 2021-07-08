@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Chuyển đổi giữa feet và meters</title>
+</head>
+
+<body>
+    <label for="convert-feet">input Number</label>:<input type="number" id="convert-feet">
+
+    <label for="changer-meet-feet">convert</label>
+
+    <select name="convert" id="changer-meet-feet">
+        <option name="meeter" value="meetTofeet">meeter to feet</option>
+        <option value="feetToMeet">Feet to meeter</option>
+    </select>
+
+    <button type="button" id="connvertButton" onclick="convert()">convert</button> <br><br>
+
+   <span><p id="result"></p></span>
+    <script>
+        function convert() {
+            var output = 1;
+            var result =  document.getElementById("result");
+            var inputnum = parseFloat(document.getElementById("convert-feet").value);
+            if (document.getElementById("changer-meet-feet").value == "meetTofeet") {
+                output = inputnum * 0.305;
+                result.innerHTML = ` ${inputnum} meeter =  ${output} feeter`
+            } else {
+                output = inputnum * 3.279;
+                result.innerHTML = ` ${inputnum} feeter =  ${output} meeter `
+
+            }
+           
+
+        }
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
