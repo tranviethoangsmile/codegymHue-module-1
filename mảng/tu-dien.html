@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Từ điển cá nhận</title>
     <style>
-        fieldset{
+        fieldset {
             width: 300px;
         }
     </style>
@@ -65,14 +65,14 @@
             }
             var isTuVung = false;
             for (let i = 0; i < tuVungArray.length; i++) {
-                
+
                 if (tim_kiem == tuVungArray[i]) {
                     document.getElementById("result_tu_vung").innerHTML = 'Từ cần tìm: ' + tuVungArray[i];
                     document.getElementById("result_noi_dung").innerHTML = 'nội dung: ' + noidungArray[i];
                     isTuVung = true;
                 }
             }
-            if(!isTuVung){
+            if (!isTuVung) {
                 alert("không tồn tại");
             }
         }

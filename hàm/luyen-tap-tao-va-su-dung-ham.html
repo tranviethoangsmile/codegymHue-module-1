@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 01</title>
+</head>
+
+<body>
+    <!-- bài 1 -->
+
+    <!-- <script>
+        alertMessage()
+        function alertMessage() {
+            alert("Xin chào mọi người !!!");
+        }
+    </script> -->
+
+
+    <!-- Bài 2 -->
+
+
+    <!-- <script>
+        uptoNumber(10)
+        function uptoNumber(a){
+            a++;
+            document.write(a);
+        }
+    </script> -->
+
+
+
+    <!-- bài 3 -->
+    <!-- 
+    <script>
+        numberMath(10,5);
+
+        function numberMath(a,b){
+            if( a > b){
+                alert(`${a} lớn hơn ${b}`);
+            }else{
+                return a + b;
+            }
+        }
+    </script> -->
+
+
+    <!-- bài 4 -->
+    <!-- <script>
+        function addNumbers() {
+            firstNum = 4;
+            secondNum = 8;
+            result = firstNum + secondNum;
+            return result;
+        }
+        result = 0;
+        alert(result);
+        result = addNumbers();
+        alert(result);
+
+    </script>
+ -->
+
+
+    <!-- bài 5 -->
+
+    <script>
+
+        var value = prompt("input value: ");
+        findStartOfNinKiHito(value)
+
+
+
+
+        function findStartOfNinKiHito(value) {
+            var ninkiHito = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+            var startArrat = ['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo'];
+            var ishave = true;
+            for (let i = 0; i < ninkiHito.length; i++) {
+                if (value == ninkiHito[i]) {
+                    document.write(`${ninkiHito[i]} có chòm sao là ${startArrat[i]}`);
+                    ishave = true;
+                    break;
+                }
+               ishave = false;
+            }
+            if (!ishave) {
+                document.write(`${value} không tồn tại`)
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+
+
+
+</body>
+
+</html>
