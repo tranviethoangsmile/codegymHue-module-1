@@ -51,7 +51,7 @@
             var noi_dung_tu_vung = document.getElementById("noi_dung_tu_moi").value;
             tuVungArray.push(tu_vung);
             noidungArray.push(noi_dung_tu_vung);
-            if (tu_vung === '' && noi_dung_tu_vung === '') {
+            if (tu_vung === '' || noi_dung_tu_vung === '') {
                 alert('không bỏ trống');
             }
             alert("thêm thành công");

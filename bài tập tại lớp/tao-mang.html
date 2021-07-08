@@ -116,19 +116,30 @@
 
 
     // cách 2
-    var arr = [];
+    // var arr = [];
+    // for(var i = 0; i < 5; i++){
+    //   var arrChild =[]
+    //     for(var j = 0; j < 7; j++){
+    //         var arrChildChild = [];
+    //         for(k = 0; k < 10; k++){
+    //             arrChildChild[k] = Math.floor(Math.random()*81)+10;
+    //         }
+    //         arrChild[j] = arrChildChild;
+    //     } 
+    //     arr[i] = arrChild;
+    // }
+    // console.log(arr);
+
+
+    var motherArr = []
     for(var i = 0; i < 5; i++){
-      var arrChild =[]
+        var childArr = []
         for(var j = 0; j < 7; j++){
-            var arrChildChild = [];
-            for(k = 0; k < 10; k++){
-                arrChildChild[k] = Math.floor(Math.random()*81)+10;
-            }
-            arrChild[j] = arrChildChild;
-        } 
-        arr[i] = arrChild;
+            childArr[j] = Math.floor(Math.random()*81)+10;
+        }
+        motherArr[i] = childArr
     }
-    console.log(arr);
+    console.log(motherArr)
 
 
 
