@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Luyện tập tạo và sử dụng hàm 02</title>
+</head>
+
+<body>
+
+    <!-- bài 1 -->
+
+    <!-- <script>
+        function mathNumber(num) {
+            return num * num;
+        }
+        var number = parseInt(prompt("input Number: "));
+        var result = mathNumber(number);
+        alert(`${number} bình phương là ${result}`);
+
+    </script> -->
+
+
+    <!-- bài 2 -->
+    <!-- <script>
+
+        function processConfirm(answer) {
+            var radius = parseInt(prompt("nhập R: "))
+            let result = "";
+            if (answer) {
+                result = radius * radius * Math.PI;
+            } else {
+                result = radius * 2 * Math.PI;
+            }
+            return result;
+        }
+
+        let confirmAnswer = confirm("Diện tích bấm ok; chu vi bấm cancer sau đó bấm bán kinh vào");
+        let theAnswer = processConfirm(confirmAnswer);
+        alert(theAnswer); -->
+
+
+    <!-- bài 3 -->
+    <!-- <script>
+        var arr = [];
+        var arrLength = parseInt(prompt("input num: "));
+        for (let i = 1; i <= arrLength; i++) {
+            arr.push(i)
+        }
+        document.write(arr.reduce(function (a, b) {
+            return a * b;
+        }))
+
+    </script> -->
+
+
+    <!-- BÀI 4 -->
+
+    <!-- <script>
+        function isNumber(num) {
+            if (!isNaN(num)) {
+                return true;
+            }
+            return false;
+        }
+        var num = prompt("input: ");
+        document.write(isNumber(num));
+
+    </script> -->
+
+
+    <!-- Bài 5 -->
+
+    <!-- <script>
+        function minNumberdisplay(arr){
+          var min = arr[0];
+          for(let i =1;i < arr.length; i++){
+              if(min > arr[i]){
+                  min = arr[i]
+              }
+          }
+          return min;
+        }
+
+        var arr = [];
+        var i = 0;
+        while(i < 3){
+            var num = parseInt(prompt("input num"))
+            arr.push(num);
+            i++;
+        }
+        document.write(minNumberdisplay(arr)); -->
+
+
+    <!-- bài 6 -->
+
+
+    <!-- <script>
+            function isNumber(num){
+                if(parseInt(num) > 0){
+                    return true;
+                }
+                return false;
+            }
+
+            var num = prompt("Input number: ");
+            document.write(isNumber(num));
+
+
+        </script> -->
+
+
+
+    <!-- bài 7 -->
+
+    <!-- <script>
+            function swapNumber(arr){
+                var temp = arr[0];
+                arr[0] = arr[arr.length - 1];
+                arr[arr.length - 1] = temp;
+                return arr;
+            }
+
+            var array = [];
+            
+            let i = 0;
+            while(i < 2){
+                var num = parseInt(prompt("input: "));
+                array.push(num);
+                i++;
+            }
+            console.log(swapNumber(array));
+
+
+          
+        </script> -->
+
+
+    <!-- bài 8 -->
+    <!-- <script>
+        function swapArr(arr) {
+            var newArr = [];
+            for (i = arr.length - 1; i >= 0; i--) {
+                newArr.push(arr[i]);
+            }
+            return newArr;
+        }
+
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        document.write(swapArr(array));
+
+    </script> -->
+
+
+    <!-- bài 9 -->
+    <script>
+        var array = ["a","b","c","a","e","f","g","h"];
+        var alpha = prompt("input: ");
+        var count = 0;
+        function checkArray(array){
+            for(let i = 0; i < array.length; i++){
+                if(array[i] === alpha){
+                    count++;
+                }
+               
+            }
+            return count;
+        }
+        document.write(`số lần xuất hiện của ${alpha} là ${checkArray(array)}`);
+
+      
+    </script>
+
+
+
+    </script>
+
+
+
+</body>
+
+</html>
