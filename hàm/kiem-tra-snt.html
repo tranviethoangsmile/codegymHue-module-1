@@ -26,6 +26,21 @@
       }else{
          alert(" không phải là số nguyên tố");
       }
+      
+      
+    //   check 20 số nguyên tố đầu tiên
+      var i = 0;
+      var sntArr = [];
+      while( i < 1000 && sntArr.length <= 20){
+          if(isPrime(i)){
+              sntArr.push(i);
+          }
+          i++;
+      }
+      for(let j = 0; j < sntArr.length; j++){
+          document.write(sntArr[j]);
+          document.write("<br>");
+      }
 
 
 
