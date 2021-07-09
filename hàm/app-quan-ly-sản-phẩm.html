@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+</head>
+
+<body>
+
+    <div>
+        <p>Add new Product</p>
+        <input type="text" name="inputNameProduct" id="inputNameProduct">
+        <button onclick="addNewProduct()">ADD</button>
+        <P>------------------------------------</P>
+        <table border="1" id="displayArea">
+
+
+        </table>
+        <div id="formEdit">
+
+        </div>
+        <script>
+            let listProduct = [];
+            displayProduc()
+
+            function displayProduc() {
+                let str = `<tr> 
+            <td> Product Name </td>
+            <td></td>
+            <td> ${listProduct.length} product </td> </tr
+            `
+                for (let i = 0; i < listProduct.length; i++) {
+                    str += `<tr><td>${listProduct[i]}</td>
+                    <td><button onclick = "showFormeditProduct(${i})">Edit</button></td>
+                    <td><button onclick = "deleteProduct(${i})">Delete</button></td>
+                    `
+                }
+
+
+                document.getElementById("displayArea").innerHTML = str;
+            }
+
+
+            function addNewProduct() {
+                var product = document.getElementById("inputNameProduct").value;
+                document.getElementById("inputNameProduct").value = " ";
+                listProduct.push(product);
+                console.log(listProduct);
+                displayProduc()
+            }
+
+            function showFormeditProduct(index) {
+                let newName = '';
+                newName = ` <input type="text" name="newNameProduct" value = "${listProduct[index]}" id="newNameProduct">
+        <button onclick="saveNewNameProduct(${index})">save</button>`;
+                document.getElementById("formEdit").innerHTML = newName;
+            }
+
+
+            function deleteProduct(index) {
+                listProduct.splice(index, 1);
+                displayProduc()
+
+
+            }
+
+            function saveNewNameProduct(index) {
+                listProduct[index] = document.getElementById("newNameProduct").value;
+                displayProduc()
+                document.getElementById("formEdit").innerHTML = '';
+            }
+
+
+
+
+
+
+        </script>
+    </div>
+
+</body>
+
+</html>
