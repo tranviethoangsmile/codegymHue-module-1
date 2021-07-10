@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APP PRODUCT MANAGER</title>
+</head>
+
+<body>
+    <H1>add new product</H1>
+    <input type="text" id="addNewProduct">
+    <button onclick="addNewProduct()">ADD</button>
+    <P>--------------PRODUCT-----------------</P>
+    <table id="listProductDisplay" border="1">
+
+    </table>
+    <div id="edit"></div>
+
+    <script>
+        var listProductName = [];
+        productDisplay()
+        function productDisplay() {
+            var listProduct = `
+       <tr>
+        <th>Name Product</th> 
+        <th></th> 
+        <th>SL ${listProductName.length}</th> 
+       </tr>
+       `
+            for (let i = 0; i < listProductName.length; i++) {
+                listProduct +=
+                    `
+           <tr>
+           <td>${listProductName[i]}</td>
+           <td><button onclick = "showFormEditProductName(${i})">Edit</<button></td>
+           <td><button onclick = " deleteProductName(${i})">Delete</<button></td>
+           </tr>
+           `
+            }
+            document.getElementById("listProductDisplay").innerHTML = listProduct;
+        }
+
+        function addNewProduct() {
+            var newProduct = document.getElementById("addNewProduct").value;
+            listProductName.push(newProduct);
+            productDisplay()
+            document.getElementById("addNewProduct").value = '';
+            
+        }
+
+
+        function deleteProductName(index){
+            listProductName.splice(index,1);
+            productDisplay()
+
+        }
+
+        function showFormEditProductName(index){
+            let newStr = ''
+            newStr = `
+            <input id = "newNameProduct" type = "text" value = "${listProductName[index]}"> 
+            <button onclick = " addNewNameProduct(${index})">Save</button>
+            `
+            document.getElementById("edit").innerHTML = newStr;
+           
+            productDisplay()
+        }
+
+
+        function addNewNameProduct(index){
+       
+            listProductName[index] = document.getElementById("newNameProduct").value;
+            productDisplay()
+            document.getElementById("edit").innerHTML = '';
+           
+        }
+
+
+    </script>
+</body>
+
+</html>
