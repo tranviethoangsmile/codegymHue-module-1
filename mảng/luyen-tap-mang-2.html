@@ -79,29 +79,21 @@
 
         // bài 5
 
-        // var stringOne = prompt('Input String 1: ')
-        // var stringTwo = prompt('Input String 2: ')
-        // var isString = true;
+        var stringOne = prompt('Input String 1: ')
+        var stringTwo = prompt('Input String 2: ')
+        var isTrue = true;
 
-        // if (stringOne.length != stringTwo.length) {
-        //     isString = false;
-        // } else {
-        //     for (let i = 0; i < stringOne.length; i++) {
-        //         if (stringOne[i] === stringTwo[i]) {
-        //             isString = true;
+       if(stringOne.length !== stringTwo.length) isTrue =  false;
+       for(let i = 0; i < stringOne.length; i++){
+           if(stringOne[i] !== stringTwo[i])isTrue =  false;
+       }
+       if(isTrue == true){
+           document.write(`hai chuỗi ${stringOne} và ${stringTwo} giống nhau`);
+       }else{
+           document.write(`hai chuỗi ${stringOne} và ${stringTwo} khác nhau`);
+       }
 
-        //         } else {
-        //             isString = false;
-
-        //         }
-        //     }
-        //     if(isString == true){
-        //         document.write('Hai chuỗi giống nhau')
-        //     }else{
-        //         document.write('Hai chuỗi khác nhau')
-
-        //     }
-        // }
+       
 
 
 
@@ -109,19 +101,19 @@
 
 
 
-        var stringInput = ["thích", "-xem bóng đá", "-", "-không biết chơi", "-đá bóng"];
-        for (let i = 0; i < stringInput.length; i++) {
-            stringInput[i] = stringInput[i].split("")
-            for (let j = 0; j < stringInput[i].length; j++) {
-                if (stringInput[i][j] == "-") {
-                    stringInput[i][j] = "_"
-                }
-            }
-            stringInput[i] = stringInput[i].join('');
+        // var stringInput = ["thích", "-xem bóng đá", "-", "-không biết chơi", "-đá bóng"];
+        // for (let i = 0; i < stringInput.length; i++) {
+        //     stringInput[i] = stringInput[i].split("")
+        //     for (let j = 0; j < stringInput[i].length; j++) {
+        //         if (stringInput[i][j] == "-") {
+        //             stringInput[i][j] = "_"
+        //         }
+        //     }
+        //     stringInput[i] = stringInput[i].join('');
 
 
-        }
-        document.write(stringInput);
+        // }
+        // document.write(stringInput);
 
 
 

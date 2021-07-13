@@ -139,7 +139,7 @@
 
 
     <!-- bài 8 -->
-    <!-- <script>
+    <script>
         function swapArr(arr) {
             var newArr = [];
             for (i = arr.length - 1; i >= 0; i--) {
@@ -148,14 +148,23 @@
             return newArr;
         }
 
-        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        var array = [];
+        var i = 0;
+        var n = parseInt(prompt("Nhap n"));
+        while(i < n){
+            var num  = parseInt(prompt("Nhap num"));
+            array.push(num);
+            i++;
+             
+        }
+       
         document.write(swapArr(array));
 
-    </script> -->
+    </script>
 
 
     <!-- bài 9 -->
-    <script>
+    <!-- <script>
         var array = ["a","b","c","a","e","f","g","h"];
         var alpha = prompt("input: ");
         var count = 0;
@@ -171,7 +180,7 @@
         document.write(`số lần xuất hiện của ${alpha} là ${checkArray(array)}`);
 
       
-    </script>
+    </script> -->
 
 
 

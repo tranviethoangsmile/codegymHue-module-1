@@ -5,80 +5,86 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APP PRODUCT MANAGER</title>
+    <title>app product manager</title>
 </head>
 
 <body>
-    <H1>add new product</H1>
-    <input type="text" id="addNewProduct">
+    <h1>PRODUCT MANAGER APP</h1>
+    <input type="text" id="newProductAdd">
     <button onclick="addNewProduct()">ADD</button>
-    <P>--------------PRODUCT-----------------</P>
-    <table id="listProductDisplay" border="1">
+    <p>***************************************</p>
+
+    <table id="productDisplay" border="1">
 
     </table>
-    <div id="edit"></div>
-
+    <div id="formEdit"></div>
     <script>
-        var listProductName = [];
+        var productList = [];
         productDisplay()
         function productDisplay() {
-            var listProduct = `
-       <tr>
-        <th>Name Product</th> 
-        <th></th> 
-        <th>SL ${listProductName.length}</th> 
-       </tr>
-       `
-            for (let i = 0; i < listProductName.length; i++) {
-                listProduct +=
+            var productDisplay =
+                `
+        <tr>
+            <th>PRODUCT NAME</th>
+            <th>SL</th>
+            <th>${productList.length}</th>
+        </tr>
+        `
+            for (let i = 0; i < productList.length; i++) {
+                productDisplay +=
                     `
-           <tr>
-           <td>${listProductName[i]}</td>
-           <td><button onclick = "showFormEditProductName(${i})">Edit</<button></td>
-           <td><button onclick = " deleteProductName(${i})">Delete</<button></td>
-           </tr>
-           `
+            <tr>
+                <td>${productList[i]}</td>
+                <td><button onclick = "showFormEdit(${i})">EDIT</button></td>
+                <td><button onclick = "deleteProduct(${i})">DELETE</button></td>
+
+            </tr>
+            `
             }
-            document.getElementById("listProductDisplay").innerHTML = listProduct;
+            document.getElementById("productDisplay").innerHTML = productDisplay;
+
         }
 
         function addNewProduct() {
-            var newProduct = document.getElementById("addNewProduct").value;
-            listProductName.push(newProduct);
+            var newProduct = document.getElementById("newProductAdd").value;
+            productList.push(newProduct);
+            console.log(productList);
             productDisplay()
-            document.getElementById("addNewProduct").value = '';
-            
+            document.getElementById("newProductAdd").value = '';
+
         }
 
 
-        function deleteProductName(index){
-            listProductName.splice(index,1);
+        function deleteProduct(index) {
+            productList.splice(index, 1);
             productDisplay()
 
         }
 
-        function showFormEditProductName(index){
-            let newStr = ''
-            newStr = `
-            <input id = "newNameProduct" type = "text" value = "${listProductName[index]}"> 
-            <button onclick = " addNewNameProduct(${index})">Save</button>
+        function showFormEdit(index) {
+            var formEdit = '';
+            formEdit =
+              `
+            <input id ="newNameProduct" type = "text" value = "${productList[index]}">
+            <button onclick = "saveNewProductName(${index})">save</button>
             `
-            document.getElementById("edit").innerHTML = newStr;
-           
-            productDisplay()
+            document.getElementById("formEdit").innerHTML = formEdit;
         }
 
 
-        function addNewNameProduct(index){
-       
-            listProductName[index] = document.getElementById("newNameProduct").value;
+        function saveNewProductName(index) {
+            productList[index] = document.getElementById("newNameProduct").value;
             productDisplay()
-            document.getElementById("edit").innerHTML = '';
-           
+            document.getElementById("formEdit").innerHTML = '';
+
+
+
         }
 
 
     </script>
+
+
 </body>
 
 </html>
