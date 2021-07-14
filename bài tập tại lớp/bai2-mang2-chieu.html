@@ -12,16 +12,20 @@
     <p id="result"></p>
     <p id="result2"></p>
     <script>
+        var max = 31;
+        var min = 10;
         function drawMatrix(arr) {
             for (let i = 0; i < n; i++) {
                 let arrChild = [];
                 for (let j = 0; j < n; j++) {
-                    arrChild[j] = (Math.floor(Math.random() * 31) + 10);
+                    arrChild[j] = (Math.floor(Math.random() * max) + min);
                 }
                 arr[i] = arrChild;
             }
             return arr;
         }
+
+
 
         var n = parseInt(prompt("nhập n: "))
         var matrix1 = [];
@@ -29,6 +33,7 @@
 
         console.log(drawMatrix(matrix1))
         console.log(drawMatrix(matrix2))
+
 
 
         var newMatix = [];
@@ -45,6 +50,7 @@
         console.log(drawNewMatrix(newMatix));
 
 
+
         var newMatixMath = []
         function drawNewMatrixMath(arr) {
             for (let i = 0; i < n; i++) {
@@ -56,7 +62,9 @@
             }
             return arr;
         }
-        console.log( drawNewMatrixMath(newMatixMath));
+        console.log(drawNewMatrixMath(newMatixMath));
+
+
 
 
 
@@ -73,6 +81,9 @@
             document.getElementById("result").innerHTML = table;
         }
         displayMatrixTotal(newMatix);
+
+
+
 
 
 

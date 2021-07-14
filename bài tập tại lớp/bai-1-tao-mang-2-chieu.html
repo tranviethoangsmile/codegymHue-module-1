@@ -10,14 +10,16 @@
 
 <body>
     <script>
+
         // drawMatrix
+
         function creatMatrix(arr) {
 
             var n = parseInt(prompt("Input n: "))
             for (let i = 0; i <= n; i++) {
                 var colArray = [];
                 for (let j = 0; j <= n; j++) {
-                    colArray[j] = Math.floor(Math.random() * 81 + 10);
+                    colArray[j] = Math.floor(Math.random() * max + min);
                 }
                 rowArray[i] = colArray;
             }
@@ -39,6 +41,8 @@
             return total;
         }
 
+        // calculate \
+
         function calculateTotalX(arr) {
             let totalX = 0;
             for (let i = 0; i < arr.length; i++) {
@@ -47,6 +51,9 @@
             return totalX;
         }
 
+
+        // calculate /
+
         function calculateTotalY(arr) {
             let totaly = 0;
             for (let i = arr.length - 1; i >= 0; i--) {
@@ -54,6 +61,8 @@
             }
             return totaly;
         }
+
+        // calculate Up and Down lINE
 
 
         function calculateTotalUpAndDownLine(arr) {
@@ -66,7 +75,8 @@
             }
             return totalUpAndDownLine;
         }
-        
+
+        // calculate LEFT AND RIGHT
 
         function calculateTotalLeftAndRight(arr) {
             let totalLeftAndRigh = 0;
@@ -125,36 +135,37 @@
 
 
 
+       
 
 
+            var max = 81;
+            var min = 10;
 
-        var rowArray = [];
-        console.log(creatMatrix(rowArray));
-        document.write(`tổng số chẳn của mảng là: ${calculateTotal(rowArray)}`)
-        document.write("<br>");
-        document.write(`Tổng đường chéo của mảng là: ${calculateTotalX(rowArray)}`);
-        document.write("<br>");
-        document.write(`Tổng đường chéo phụ của mảng là: ${calculateTotalY(rowArray)}`);
-        document.write("<br>");
+            var rowArray = [];
+            console.log(creatMatrix(rowArray));
+            document.write(`tổng số chẳn của mảng là: ${calculateTotal(rowArray)}`)
+            document.write("<br>");
+            document.write(`Tổng đường chéo của mảng là: ${calculateTotalX(rowArray)}`);
+            document.write("<br>");
+            document.write(`Tổng đường chéo phụ của mảng là: ${calculateTotalY(rowArray)}`);
+            document.write("<br>");
 
-        document.write(`Tổng đường biên trên và dưới của mảng là: ${calculateTotalUpAndDownLine(rowArray)}`);
-        document.write("<br>");
-        document.write(`Tổng đường biên trái và phải của mảng là: ${calculateTotalLeftAndRight(rowArray)}`);
-        document.write("<br>");
+            document.write(`Tổng đường biên trên và dưới của mảng là: ${calculateTotalUpAndDownLine(rowArray)}`);
+            document.write("<br>");
+            document.write(`Tổng đường biên trái và phải của mảng là: ${calculateTotalLeftAndRight(rowArray)}`);
+            document.write("<br>");
 
-        document.write("Tổng đường biên là: " + (parseInt(calculateTotalUpAndDownLine(rowArray)) + parseInt(calculateTotalLeftAndRight(rowArray))))
+            document.write("Tổng đường biên là: " + (parseInt(calculateTotalUpAndDownLine(rowArray)) + parseInt(calculateTotalLeftAndRight(rowArray))))
 
-        document.write("<br>");
-
-
-
-        var matrix = `matrix của chúng ta là: ${displayMatrix(rowArray)}`;
-
-        var matrix2 = `tam giác trên là: ${drawTamGiacTren(rowArray)}`;
-        document.write("<br>");
-        var matrix3 = `tam giác dưới là: ${drawTamGiacDuoi(rowArray)}`;
+            document.write("<br>");
 
 
+            var matrix = `matrix của chúng ta là: ${displayMatrix(rowArray)}`;
+
+            var matrix2 = `tam giác trên là: ${drawTamGiacTren(rowArray)}`;
+            document.write("<br>");
+            var matrix3 = `tam giác dưới là: ${drawTamGiacDuoi(rowArray)}`;
+      
 
 
 
