@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function isPalindrome(text) {
+
+        var b = new Array();
+        var c = new Array();
+        if (text = " ") {
+            alert("Moi nhap lai");
+        } else {
+
+            for (var i = 0; i < text.length; i++) {
+                if (a[i] == " ") {
+                    continue;
+                } else {
+                    b.push(text[i].toUpperCase());
+                }
+            }
+            console.log(b);
+            for (var i = text.length - 1; i >= 0; i--) {
+                if (text[i] == " ") {
+                    continue;
+                }
+                c.push(a[i].toUpperCase());
+
+            }
+            console.log(c);
+            c.reverse();
+            if (b.join("") == c.reverse().join("")) {
+                alert("True")
+
+            } else
+                alert("False")
+        }
+    }
+    var a = prompt("nhap tu can kiem tra");
+    isPalindrome(a);
+
+
+</script>
+</body>
+</html>

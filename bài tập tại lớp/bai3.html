@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="result"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
+    <script>
+
+        var n = parseInt(prompt("Input n: "))
+        var m = parseInt(prompt("input m: "))
+        var max = parseInt(prompt("input max: "))
+        var min = parseInt(prompt("input mim: "))
+
+
+
+        function creatMatrix(arr) {
+            for (let i = 0; i <= n; i++) {
+                var colArray = [];
+                for (let j = 0; j <= m; j++) {
+                    colArray[j] = Math.floor(Math.random() * max + min);
+                }
+                rowArray[i] = colArray;
+            }
+            return arr;
+
+        }
+
+        var rowArray = [];
+        console.log(creatMatrix(rowArray))
+
+        function displayMatrix() {
+            var table = `<table border = "1">`
+            for (let i = 0; i < rowArray.length; i++) {
+                table += `<tr>`
+                for (let j = 0; j < rowArray[i].length; j++) {
+                    table += `<td>${rowArray[i][j]}</td>`
+
+                }
+                table += `</tr>`
+            }
+            table += "</table>"
+            document.getElementById("result").innerHTML = table;
+        }
+        displayMatrix()
+
+
+        function displayMatrix2() {
+            var table2 = `<table border = "1">`
+            for (let i = 0; i < rowArray.length; i++) {
+                table2 += `<tr>`
+                for (let j = 0; j < rowArray[i].length; j++) {
+                    if (rowArray[i][j] % 5 == 0) {
+                        table2 += `<td>${rowArray[i][j]}</td>`
+                    } else {
+                        table2 += `<td>0</td>`
+                    }
+                }
+                table2 += `</tr>`;
+            }
+            table2 += `</table>`;
+            document.getElementById("result2").innerHTML = table2;
+        }
+
+        displayMatrix2()
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

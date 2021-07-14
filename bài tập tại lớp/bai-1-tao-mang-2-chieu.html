@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo mãng 2 chiều</title>
+</head>
+
+<body>
+    <script>
+        // drawMatrix
+        function creatMatrix(arr) {
+
+            var n = parseInt(prompt("Input n: "))
+            for (let i = 0; i <= n; i++) {
+                var colArray = [];
+                for (let j = 0; j <= n; j++) {
+                    colArray[j] = Math.floor(Math.random() * 81 + 10);
+                }
+                rowArray[i] = colArray;
+            }
+            return arr;
+
+        }
+
+        // calculateTotal 
+
+        function calculateTotal(arr) {
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < (arr[i].length); j++) {
+                    if (arr[i][j] % 2 == 0) {
+                        total += arr[i][j];
+                    }
+                }
+            }
+            return total;
+        }
+
+        function calculateTotalX(arr) {
+            let totalX = 0;
+            for (let i = 0; i < arr.length; i++) {
+                totalX += arr[i][i];
+            }
+            return totalX;
+        }
+
+        function calculateTotalY(arr) {
+            let totaly = 0;
+            for (let i = arr.length - 1; i >= 0; i--) {
+                totaly += arr[i][arr.length - i - 1];
+            }
+            return totaly;
+        }
+
+
+        function calculateTotalUpAndDownLine(arr) {
+            let totalUpAndDownLine = 0;
+            for (let i = 0; i < arr.length; i++) {
+                totalUpAndDownLine += arr[0][i];
+            }
+            for (let j = 0; j < arr.length; j++) {
+                totalUpAndDownLine += arr[arr.length - 1][j]
+            }
+            return totalUpAndDownLine;
+        }
+        
+
+        function calculateTotalLeftAndRight(arr) {
+            let totalLeftAndRigh = 0;
+            for (let i = 1; i < arr.length - 1; i++) {
+                totalLeftAndRigh += arr[i][0];
+            }
+            for (let j = 1; j < arr.length - 1; j++) {
+                totalLeftAndRigh += arr[j][arr.length - 1];
+            }
+            return totalLeftAndRigh;
+        }
+
+
+
+
+
+        function displayMatrix(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                document.write(arr[i]);
+                document.write("<br>");
+            }
+        }
+
+
+
+
+
+        function drawTamGiacTren(arr) {
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < i; j++) {
+                    document.write(arr[i][j]);
+
+                }
+                document.write("<br>");
+
+            }
+
+        }
+
+
+        function drawTamGiacDuoi(arr) {
+            for (let i = arr.length - 1; i > 0; i--) {
+                for (let j = 0; j < i; j++) {
+                    document.write(arr[i][j])
+                }
+                document.write("<br>");
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        var rowArray = [];
+        console.log(creatMatrix(rowArray));
+        document.write(`tổng số chẳn của mảng là: ${calculateTotal(rowArray)}`)
+        document.write("<br>");
+        document.write(`Tổng đường chéo của mảng là: ${calculateTotalX(rowArray)}`);
+        document.write("<br>");
+        document.write(`Tổng đường chéo phụ của mảng là: ${calculateTotalY(rowArray)}`);
+        document.write("<br>");
+
+        document.write(`Tổng đường biên trên và dưới của mảng là: ${calculateTotalUpAndDownLine(rowArray)}`);
+        document.write("<br>");
+        document.write(`Tổng đường biên trái và phải của mảng là: ${calculateTotalLeftAndRight(rowArray)}`);
+        document.write("<br>");
+
+        document.write("Tổng đường biên là: " + (parseInt(calculateTotalUpAndDownLine(rowArray)) + parseInt(calculateTotalLeftAndRight(rowArray))))
+
+        document.write("<br>");
+
+
+
+        var matrix = `matrix của chúng ta là: ${displayMatrix(rowArray)}`;
+
+        var matrix2 = `tam giác trên là: ${drawTamGiacTren(rowArray)}`;
+        document.write("<br>");
+        var matrix3 = `tam giác dưới là: ${drawTamGiacDuoi(rowArray)}`;
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
