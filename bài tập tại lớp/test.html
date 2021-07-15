@@ -1,25 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
-    <script>
-var numInput = prompt("input Num: ");
 
-for(let i = 1; i < numInput.length; i++){
-    if((numInput[i-1] % 2 == 0) && (numInput[i] %2 ==0)){
-        numInput[i-1] + '-' + numInput[i];
-    }
-}
-console.log(numInput.toString());
+<body onload="main()">
+    <!-- BÀI 1 -->
+    <script>
+
+
+        // Hàm kiểm tra số nguyên tố trong mảng;
+
+        function printPrime(arr) {
+            let isPrimeSave = []
+            for (let i = 0; i < arr.length; i++) {
+                if (isPrime(arr[i])) isPrimeSave.push(arr[i]);
+
+            }
+            document.write(`${isPrimeSave.join(',')} là số nguyên tố trong mảng`);
+        }
+
+
+        // hàm tính tổng các số nguyên tố trong mảng;
+        function sumPrimes(arr) {
+            let isPrimeSave = []
+            let total = 0;
+            for (let i = 0; i < arr.length; i++) {
+                if (isPrime(arr[i])) isPrimeSave.push(arr[i]);
+            }
+
+            for (let j = 0; j < isPrimeSave.length; j++) {
+                total += isPrimeSave[j];
+            }
+            return total;
+
+
+        }
+
+
+        // Hàm kiểm tra số nguyên tố;
+        function isPrime(number) {
+            if (number < 2) return false
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) return false;
+            }
+            return true;
+        }
+
+
+
+
+
+
+        // hàm in mảng;
+        function printArray(arr) {
+
+            document.write(arr.join('-'));
+
+        }
+
+
+        // hàm khởi tạo mảng
+        var creatAutoArray = [];
+        var max = 81;
+        var min = 10;
+        function generateArray(arr, size) {
+            for (let i = 0; i < size; i++) {
+                creatAutoArray[i] = Math.floor(Math.random() * max) + min;
+            }
+            return arr;
+
+
+        }
+
+
+
+        function main() {
+            var size;
+            do {
+                size = parseInt(prompt("Input size: "));
+                if (!isNaN(size)) {
+                    break;
+                } else {
+                    alert("Hãy nhập vào số nguyên dương.")
+                }
+
+            } while (isNaN(size));
+
+
+            var number = parseInt(prompt("input number: "));
+
+            console.log(generateArray(creatAutoArray, size));
+
+            printArray(creatAutoArray);
+
+            document.write("<br>");
+
+            document.write("---------------------------" + "<br>")
+
+            printPrime(creatAutoArray);
+
+            document.write("<br>");
+
+            document.write("---------------------------" + "<br>")
+
+            document.write(`${number} là số nguyên tố ${isPrime(number)}`)
+
+            document.write("<br>");
+
+            document.write("---------------------------" + "<br>")
+
+            document.write(`tổng các số nguyên tố trong mảng là: ${sumPrimes(creatAutoArray)}`)
+
+        }
+
+
+
+
+
+
+
+
 
 
 
     </script>
-    
+
 </body>
+
 </html>
