@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Xây dựng lớp mô tả Temperature</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+
+            doC;
+            constructor(doC) {
+                this.doC = doC;
+            }
+            getDoc() {
+                return this.doC;
+            }
+            setDoC(doC) {
+                this.doC = doC;
+            }
+            convertDoCToKenvin() {
+                return this.doC + parseFloat(273, 15)
+            }
+            convertDoCToF() {
+                return (9 / 5 * this.doC) + parseInt(32);
+            }
+        }
+        var doC = parseFloat(prompt("input DoC"));
+        var temperature = new Temperature(doC);
+        document.write(`${doC} độ C = ${temperature.convertDoCToF()} độ F <br>`);
+        document.write(`${doC} dộ C = ${temperature.convertDoCToKenvin()} độ K`);
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
