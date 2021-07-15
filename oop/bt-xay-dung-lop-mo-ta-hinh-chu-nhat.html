@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
+</head>
+<body>
+    <canvas id="canvas" width="300px" height="200px" style="background-color: rgb(182, 173, 161);"></canvas>
+    <br>
+    <script>
+        class Rectangle{
+            width;
+            heigth;
+            constructor(width,heigth){
+                this.width = width;
+                this.heigth = heigth;
+            }
+            getWidth(){
+                return this.width;
+            }
+            getHeigth(){
+                return this.heigth;
+            }
+            rectSquare(){
+                return this.width * this.heigth;
+            }
+            rectPerimeter(){
+                return (this.width + this.heigth) *2; 
+            }
+        }
+
+       
+
+
+      
+        var width = parseInt(prompt("input Width: "));
+        var height = parseInt(prompt("input height: "));
+        var rectangle = new Rectangle(width, height);
+        document.write(`Chiều rộng là: ${width} <br> `);
+        document.write(`Chiều cao là: ${height} <br> `);
+        document.write(`Diện tích hình chữ nhật là: ${rectangle.rectSquare()} <br> `)
+        document.write(`Chu vi hình chữ nhật là: ${rectangle.rectPerimeter()}`)
+
+        var canvas = document.getElementById("canvas");
+        rect = canvas.getContext("2d");
+        rect.beginPath();
+        rect.fillStyle = "red";
+        rect.fillRect(10,10,rectangle.getWidth(),rectangle.getHeigth());
+        rect.fill();
+
+
+        
+        
+    </script>
+    
+</body>
+</html>
