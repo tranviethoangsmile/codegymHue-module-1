@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Điều khiển nhân vật</title>
+</head>
+
+<body>
+    <canvas id="gameBoard" width="500px" height="400px"></canvas>
+    <button onclick = "displayPhoto()">Start</button>
+    <img src="https://i.upanh.org/2021/07/15/down1af1dafeb7b7ade94.png" alt="down1" id="gameID" border="0" style="display: none;">
+    <script>
+        window.onload = 
+        
+        function displayPhoto(){
+            var canvas = document.getElementById("gameBoard");
+            var ctx = canvas.getContext("2d");
+            var img = document.getElementById("gameID");
+            ctx.drawImage(img,10,10);
+        }
+
+    </script>
+
+
+</body>
+
+</html>
