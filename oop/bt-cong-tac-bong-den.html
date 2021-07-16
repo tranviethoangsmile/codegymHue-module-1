@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Công tác - bóng đèn</title>
+</head>
+
+<body>
+    <button onclick="turnOn()">Turn On</button>
+    <button onclick="turnOff()">Turn Off</button>
+    <p id="lamp"></p>
+
+    <script>
+        class SwicthButton {
+            constructor(status) {
+                this.status = status;
+            }
+            swicthOn() {
+                return electricLamp.turnOn();
+            }
+            swicthOff() {
+                return electricLamp.turnOff();
+            }
+        }
+
+        class ElectricLamp {
+            constructor(status) {
+                this.status = status;
+            }
+            turnOn() {
+                document.getElementById("lamp").innerHTML = ` <img src="https://denledhcm.com/wp-content/uploads/2020/12/cau-tao-bong-den-soi-dot.jpg" alt="Bóng đèn On" width = "50px" height = "50px">`
+
+            }
+            turnOff() {
+                document.getElementById("lamp").innerHTML = ` <img src="https://airtravelersassociation.com/wp-content/uploads/2019/10/halo-gen-la-gi.jpg" alt="Bóng đèn off" width = "50px" height = "50px">`
+            }
+
+        }
+
+        var swicthButton = new SwicthButton(true);
+        var electricLamp = new ElectricLamp(true);
+        function turnOn() {
+            swicthButton.swicthOn();
+        }
+        function turnOff() {
+            swicthButton.swicthOff();
+        }
+    </script>
+
+
+</body>
+
+</html>
