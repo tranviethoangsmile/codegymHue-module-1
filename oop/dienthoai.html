@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diệnd thoại</title>
+</head>
+<body>
+    <fieldset border = "1" style="width: 300px;height: 150px;" >
+        <legend>nokia</legend>
+        <textarea name="display" id="screenDisplay" cols="35" rows="3"></textarea>
+        <input type="text" id="batteryDisplay">
+        <button onclick="changerBattery()"  style="margin-top: 0px;">Sạc</button> <br> <br>
+        <button>Hộp thư</button>
+        <button>Tin đã gửi</button>
+
+    </fieldset>
+    <fieldset border = "1" style="width: 300px;height: 150px; margin-top: 0px;"  >
+        <legend>Iphone</legend>
+        <textarea name="display" id="screenDisplay" cols="35" rows="3"></textarea>
+        <input type="text">
+        <button style="margin-top: 0px;">Sạc</button> <br> <br>
+        <button>Hộp thư</button>
+        <button>Tin đã gửi</button>
+    </fieldset>
+
+
+    <script>
+        class Moble{
+            constructor(name,batterry,status){
+                this.name = name;
+                this.batterry = batterry;
+                this.status = status;
+                this.inbox = [];
+                this.send = [];
+                this.writing = '';
+            }
+            checkBattery(){
+                document.getElementById("batteryDisplay").innerHTML = this.batterry;
+                if(this.batterry < 50){
+                    document.getElementById("batteryDisplay").style.backgroundColor = 'green';
+                }else if(this.batterry < 20){
+                    document.getElementById("batteryDisplay").style.backgroundColor = 'red';
+                }
+            }
+            changerBattery(){
+                setInterval(function(){
+                    this.batterry++;
+                },1000);
+            }
+            sendMessage(may){
+                this.batterry--;
+                var text = document.getElementById("display").value;
+               this.inbox.push(text);
+               may.this.send.push(text);
+                
+
+            }
+
+        }
+
+        var nokia = new Moble('nokia',100,status)
+        var iphone = new Moble('iphone',100,status)
+
+    </script>
+    
+</body>
+</html>

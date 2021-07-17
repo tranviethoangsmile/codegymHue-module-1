@@ -28,7 +28,7 @@
         }
 
         #caption-table {
-            background-color: rgb(190, 116, 116);
+            background-color: rgb(92, 197, 92)
         }
 
         #btn-add {
@@ -43,18 +43,20 @@
             display: none;
         }
 
-        .container{
+        .container {
             display: block;
+            width: 750px;
+            background-color: blanchedalmond;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <div class="container" style="display: none;" id="container">
 
-        <p>Tên sản phẩm</p>
-        <input class="form-control" placeholder="Nhập tên sản phẩm" name="pwd" id="productName"> <br> <br>
+        <label for="productName">Tên sản phẩm:</label>
+        <input class="form-control" placeholder="Nhập tên sản phẩm" name="pwd" id="productName"> 
         <p>Hãng</p>
         <select id="chooseCompany" onchange="manuFacturerCompany()">
             <option>---Chọn---</option>
@@ -64,35 +66,51 @@
             <option value="huawei">Huawei</option>
             <option value="oppo">Oppo</option>
             <option value="other">Other</option>
-        </select> <br><br>
+        </select>
         <p id="tableChooseStorage"></p> <br>
-
-        <p>Giá</p>
-        <input class="form-control" type="number" id="priceOfProduct"> <br> <br>
-        <p>Ảnh</p>
-
-        <input class="form-control" type="text" id="choosePhoto"> <br><br>
-
+        <label for="priceOfProduct">Giá</label>
+        <input class="form-control" type="number" id="priceOfProduct"  placeholder="Nhập giá sản phẩm" name="priceOfProduct"> 
+        <label for="photo">Ảnh</label>
+        <input name="photo" class="form-control"  placeholder="link ảnh" type="text" id="choosePhoto"> <br>
         <button id="btn-add" class="btn btn-success" onclick="addNewProduct()">Thêm sản phẩm</button>
         <button class="btn btn-light" id="reset" type="reset" onclick="resetAll()">Reset</button>
         <button class="btn btn-success" id="updateProduct" onclick="updateProduct()">Update</button>
 
 
         <p>------------------------------------------------------------------------------------------------</p>
-
+    </div>
+    <div class="container">
+        
         <table class="table table-hover" id="productListDisplay">
 
         </table>
-
-
+        <button style="display: none;" class="btn btn-danger" onclick = "showAllProduct()" id="showAllProduct">All</button>
+        <button style="display: block;" class="btn btn-success" onclick="btnAddproduct()" id="btnAddproduct"> Thêm sản phẩm</button>
     </div>
-    <button></button>
+
+
+
+
 
 
 
 
 
     <script>
+        function showAllProduct(){
+            document.getElementById("container").style.display = "none";
+            document.getElementById("btnAddproduct").style.display = "block";
+            document.getElementById("showAllProduct").style.display = "none";
+        }
+
+
+        function btnAddproduct() {
+            document.getElementById("container").style.display = "block";
+            document.getElementById("btnAddproduct").style.display = "none";
+            document.getElementById("showAllProduct").style.display = "block";
+
+
+        }
         function updateProduct() {
             var productName = document.getElementById("productName").value;
             var manuFacturer = document.getElementById("chooseCompany").value;
@@ -188,18 +206,18 @@
             document.getElementById("chooseCompany").value = '';
 
         }
-        var productListName = [];
-        var productPhoto = [];
-        var productManuFacturer = [];
-        var storage = [];
-        var productPrice = [];
+        var productListName = ['iphone X', 'Samsung Note 10plus'];
+        var productPhoto = ['http://www.techrum.vn/chevereto/images/2017/09/13/swfu2.jpg', 'https://cellphones.com.vn/sforum/wp-content/uploads/2019/07/Samsung-Galaxy-Note-10-concept-render-design-Waqar-Khan-2.jpg'];
+        var productManuFacturer = ['Apple', 'Samsung'];
+        var storage = ['32G', '128'];
+        var productPrice = [10000, 20000];
         productListDisplay()
 
         function productListDisplay() {
             var productListDisplay =
                 `
                          <tr id= "caption-table"> 
-                            <th>Tên Sản phẩm</th>
+                            <th>Tên Sản phẩm SL ${productListName.length}</th>
                             <th>Hãng</th>
                             <th>Dung lượng</th>
                             <th>Giá</th>
@@ -219,7 +237,7 @@
                             <th>${productPrice[i]}</th>
                             <th><button class="btn btn-success" onclick = "showEditProduct(${i})">Edit</button></th>
                             <th><button class="btn btn-success" onclick = "deleteProduct(${i})">Delete</button></th>
-                            <th>  <img src="${productPhoto[i]}" alt="product photo" width="50px" height="50px" class = "img-rounded"></th>
+                            <th> <img src="${productPhoto[i]}" alt="product photo" width="150px" height="120px" class = "img-responsive"></th>
 
 
                         </tr>
@@ -344,6 +362,7 @@
             document.getElementById("storage").value = '';
 
         }
+       
 
 
 
