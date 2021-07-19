@@ -1,3 +1,6 @@
+ 
+
+
 // function Hero(image, top, below, left, right, size) {
 //   this.image = image;
 //   this.top = top;
