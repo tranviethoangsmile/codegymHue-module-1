@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var i = 0;
+    var Rat = function (name, weight, speed, status) {
+        this.name = name;
+        this.setName = function () {
+            this.name = prompt("Nhap ten con chuot");
+        }
+        this.weight = weight;
+        this.setWeight = function () {
+            this.weight = parseInt(prompt("Nhap can nang con chuot"));
+        }
+        this.speed = speed;
+        this.setSpeed = function () {
+            this.speed = prompt("Nhap toc do cua con chuot");
+        }
+        this.status = status;
+        this.setStatus = function () {
+            this.status = prompt("Nhap trang thai cua con chuot (Song hay Chet)")
+        }
+        this.sound = function () {
+            document.write("chit'chit" + "<br>");
+        }
+
+    }
+    var Cat = function (name, weight, speedMax) {
+        this.name = name;
+        this.weight = weight;
+        this.speedMax = speedMax;
+        this.sound = function () {
+            document.write("Meo Meo" + "<br>")
+        }
+        this.catch = function () {
+            document.write("Meo " + this.name + " da nham vao con chuot " + rat.name + "<br>");
+            document.write("Meo " + this.name + " bat dau duoi chuot " + rat.name + "<br>");
+            if (this.speedMax > rat.speed) {
+                i++;
+                document.write("Meo " + this.name + " da bat duoc con chuot " + rat.name + "<br>");
+                this.sound();
+                document.write("Meo " + this.name + " da bat duoc " + i + " con chuot" + "<br>");
+                this.eat();
+            } else {
+                document.write("Meo " + this.name + " qua map de bat duoc con chuot nay" + "<br>");
+                document.write("Chuot " + rat.name + " da chay thoat thanh cong " + "<b3r>");
+                rat.sound();
+            }
+        }
+        this.eat = function () {
+            if (rat.status === "song" || rat.status === "Song") {
+                this.weight += rat.weight;
+                this.speedMax--;
+                document.write("Meo " + this.name + " da an thit chuot " + rat.name + "<br>");
+                document.write("Can nang cua meo bay gio la " + this.weight + "<br>");
+                document.write("Toc do toi da cua meo bay gio la " + this.speedMax + "<br>");
+
+            } else {
+                document.write("Con chuot nay da chet, khong the an duoc " + "<br>")
+            }
+        }
+    }
+    var cat = new Cat("Tom", 10, 10);
+    var rat = new Rat();
+
+    function game() {
+
+        rat.setName();
+        rat.setSpeed();
+        rat.setWeight();
+        rat.setStatus();
+
+
+        console.log(rat);
+        cat.catch();
+
+    }
+
+    var a = parseInt(prompt("Nhap so con chuot co trong tro choi"));
+
+    for (var j = 0; j < a; j++) {
+        if (j === 0) {
+            document.write("Co " + a + " con chuot o trong nha cua meo " + cat.name + "<br>");
+        }
+        alert("Con chuot thu " + (j + 1));
+        game()
+        document.write("<br>");
+
+    }
+</script>
+</body>
+</html>

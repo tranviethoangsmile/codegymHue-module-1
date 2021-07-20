@@ -15,9 +15,12 @@
 
     <script>
         class SwicthButton {
-            constructor(status) {
-                this.status = status;
+            constructor(electricLamp) {
+                this.electricLamp = electricLamp;
             }
+        connectoLamp(lamp){
+            this.lamp = lamp
+        }
             swicthOn() {
                 return electricLamp.turnOn();
             }

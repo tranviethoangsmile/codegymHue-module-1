@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOP</title>
+</head>
+
+<body>
+</body>
+<script>
+    class Employee {
+        name;
+        age;
+        address;
+        salary;
+        constructor(name, age, address, salary) {
+            this.name = name;
+            this.age = age;
+            this.address = address;
+            this.salary = salary;
+        }
+        inputWorkingHours(workingHours) {
+            this.workingHours = workingHours;
+        }
+
+        getInfo() {
+            document.write(` Employee: ${this.name} <br> Age:  ${this.age} <br> Salary: ${this.salary} <br> Address: ${this.address}`);
+        }
+        calculatebonus(workingHours) {
+            let bonus;
+            if (this.workingHours >= 200) {
+                bonus = this.salary * 20 / 100;
+            } else if (this.workingHours >= 100 && this.workingHours < 200) {
+                bonus = this.salary * 10 / 100;
+            } else if (this.workingHours < 100) {
+                bonus = 0;
+            }
+            return bonus;
+        }
+
+    }
+    var hoang = new Employee('hoang', 29, 'hue', 1000000);
+    var workingHours = parseInt(prompt("input workingHours: "));
+    hoang.inputWorkingHours(workingHours);
+    document.write(hoang.getInfo());
+    document.write(`Bonus: ${hoang.calculatebonus()}`);
+
+</script>
+
+</html>

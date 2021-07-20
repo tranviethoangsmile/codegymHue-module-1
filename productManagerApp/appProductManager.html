@@ -146,14 +146,17 @@
 
 
         function showEditProduct(index) {
+           
             document.getElementById("btn-add").style.display = "none";
             document.getElementById("reset").style.display = "none";
             document.getElementById("updateProduct").style.display = "block";
+            document.getElementById("container").style.display = "block";
             document.getElementById("productName").value = productListName[index];
             document.getElementById("chooseCompany").value = productManuFacturer[index];
-            document.getElementById("storage").value = storage[index];
+            // document.getElementById("storage").value = storage[index];
             document.getElementById("priceOfProduct").value = productPrice[index];
             document.getElementById("choosePhoto").value = productPhoto[index];
+           
 
             productListName.splice(index, 1);
 
