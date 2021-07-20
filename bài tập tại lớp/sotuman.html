@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm số tự mãn</title>
+</head>
+
+<body>
+    <script>
+        // var number;
+        // do {
+        //     number = parseInt(prompt("Input number: "));
+        //     if (!isNaN(number)) {
+        //         break;
+
+        //     } else {
+        //         alert("Nhập vào số nguyên");
+
+        //     }
+
+        // } while (isNaN(number));
+        function howNumberInput(number) {
+            var count = 0;
+
+            while (number > 1) {
+                number = number / 10;
+
+                count++;
+
+            }
+            return count;
+        }
+
+        function isNarcissisticNumber(number) {
+            var isNumberOfDigits = howNumberInput(number);
+            var remember;
+            var sum = 0;
+            var num = number;
+            while (num > 0) {
+                remember = num % 10;
+                sum += Math.pow(remember, isNumberOfDigits);
+                num -= remember;
+                num = num / 10;
+            }
+            return (sum == number);
+        }
+
+        for (let i = 100; i <= 10000; i++) {
+            if (isNarcissisticNumber(i)) {
+               document.write(`${i} là số tự mãn`)
+               document.write("<br>");
+            } else {
+             continue;
+            }
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

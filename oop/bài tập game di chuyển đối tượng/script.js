@@ -81,11 +81,11 @@ class Hero {
 var hero = new Hero("down2.png", 20, 20, 20, 20, 200,5);
 
 function start() {
-    if (hero.left < window.innerWidth - hero.size && hero.top < 50) {
+    if (hero.left < window.innerWidth - hero.size && hero.top < 0) {
         hero.getMoveRight();
     } else if (hero.top < window.innerHeight - hero.size && hero.left >= window.innerWidth - 200) {
         hero.getMoveBelow();
-    } else if (hero.left > 100) {
+    } else if (hero.left > 0) {
         hero.getMoveLeft();
     } else {
         hero.getMoveTop();
