@@ -27,7 +27,7 @@
         }
 
         getInfo() {
-            document.write(` Employee: ${this.name} <br> Age:  ${this.age} <br> Salary: ${this.salary} <br> Address: ${this.address}`);
+            document.write(`Employee: ${this.name} <br> Age:  ${this.age} <br>Address: ${this.address} <br> Salary: ${this.salary}`);
         }
         calculatebonus(workingHours) {
             let bonus;
@@ -42,10 +42,11 @@
         }
 
     }
-    var hoang = new Employee('hoang', 29, 'hue', 1000000);
+    var hoang = new Employee('hoang', 29, 'hue', 100000);
     var workingHours = parseInt(prompt("input workingHours: "));
     hoang.inputWorkingHours(workingHours);
     document.write(hoang.getInfo());
+    document.write("<br>");
     document.write(`Bonus: ${hoang.calculatebonus()}`);
 
 </script>

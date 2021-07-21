@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // var number;
+        // do {
+        //     number = parseInt(prompt("input Number: "));
+        //     if (!isNaN(number)) {
+        //         break;
+        //     } else {
+        //         alert("not Number, please try again");
+        //     }
+        // } while (isNaN(number));
+
+        function howMuchNumberInput(number) {
+            var count = 0;
+            while (number > 1) {
+                number = number / 10;
+                count++;
+            }
+            return count;
+        }
+
+        function isNarcissisticNumber(number) {
+            var luythua = howMuchNumberInput(number);
+            var remember;
+            var sum = number;
+            var total = 0;
+            while (sum > 0) {
+                remember = sum % 10;
+                total += Math.pow(remember, luythua);
+                sum -= remember;
+                sum = sum / 10;
+            }
+            return (total == number);
+
+        }
+
+        function displayIsNarcissisticNumbe() {
+            for (let i = 100; i <= 1000000; i++) {
+                if (isNarcissisticNumber(i)) {
+                    document.write(`${i} là số tự mãn <br>`);
+                }
+            }
+        }
+
+        displayIsNarcissisticNumbe();
+    </script>
+
+</body>
+
+</html>

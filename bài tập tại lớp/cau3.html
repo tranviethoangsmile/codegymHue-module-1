@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>câu 3</title>
+</head>
+
+<body>
+    <script>
+        class Employee {
+            name;
+            age;
+            address;
+            salary;
+            constructor(name, age, address, salary) {
+                this.name = name;
+                this.age = age;
+                this.address = address;
+                this.salary = salary;
+            }
+            inputWokingHours() {
+                this.workingHours = parseInt(prompt(`Input totalWorkingHours of ${this.name}:`));
+                return this.workingHours;
+            }
+            printInfo() {
+                document.write(`employee of Name: ${this.name} <br> Age: ${this.age} <br> ${this.address} <br> Salary: ${this.salary}`)
+            }
+            calculatorBonus() {
+                var bonus;
+                if (this.workingHours >= 200) {
+                    bonus = this.salary * 20 / 100;
+                } else if (this.workingHours < 200 && this.workingHours >= 100) {
+                    bonus = this.salary * 10 / 100;
+                } else {
+                    bonus = 0;
+                }
+                return bonus;
+            }
+        }
+
+        var employee = new Employee('hoang', 29, 'Thừa Thiên Huế', 1000000);
+        employee.printInfo();
+        document.write("<br>");
+        document.write(`total Woking Hours of ${employee.name} is: ${employee.inputWokingHours()}`);
+        document.write("<br>");
+        document.write(`Bonus of ${employee.name} is: ${employee.calculatorBonus()}`);
+        document.write("<br>");
+        document.write("----------");
+        document.write("<br>");
+
+
+        var employee_2 = new Employee('chính', 25, 'Thừa Thiên Huế', 15000000);
+
+        employee_2.printInfo();
+        document.write("<br>");
+        document.write(`total Woking Hours of ${employee_2.name} is: ${employee_2.inputWokingHours()}`);
+        document.write("<br>");
+        document.write(`Bonus of ${employee_2.name} is: ${employee_2.calculatorBonus()}`);
+        document.write("<br>");
+        document.write("----------");
+        document.write("<br>");
+
+
+        var employee_4 = new Employee('huy', 25, 'Thừa Thiên Huế', 15000000);
+
+        employee_2.printInfo();
+        document.write("<br>");
+        document.write(`total Woking Hours of ${employee_4.name} is: ${employee_4.inputWokingHours()}`);
+        document.write("<br>");
+        document.write(`Bonus of ${employee_4.name} is: ${employee_4.calculatorBonus()}`);
+        document.write("<br>");
+        document.write("----------");
+        document.write("<br>");
+
+
+        var employee_3 = new Employee('Long', 27, 'Thừa Thiên Huế', 1200000);
+        employee_3.printInfo();
+        document.write("<br>");
+        document.write(`total Woking Hours of ${employee_3.name} is: ${employee_3.inputWokingHours()}`);
+        document.write("<br>");
+        document.write(`Bonus of ${employee_3.name} is: ${employee_3.calculatorBonus()}`);
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

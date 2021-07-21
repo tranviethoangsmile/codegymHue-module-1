@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Số tự mản</title>
+</head>
+<body>
+    <script>
+        // var number;
+        // do{
+        //     number = parseInt(prompt("input number"));
+        //     if(!isNaN(number)){
+        //         break;
+        //     }else{
+        //         alert("nhập số vào mày");
+        //     }
+
+        
+            
+        // }while(isNaN(number))
+
+        function nhapBaoNhieuChuSo(number){
+            var count = 0;
+            while(number > 1){
+                number = number /10;
+                count++;
+
+            }
+            return count;
+        }
+
+       function checkSoTuMan(number){
+           var luyThua = nhapBaoNhieuChuSo(number);
+           var temp = number;
+           var remember;
+           var total = 0;
+           while(temp > 0){
+               remember = temp %10;
+               total += Math.pow(remember,luyThua);
+               temp -= remember;
+               temp = temp /10;
+
+           }
+           return (total == number);
+           
+       }
+      
+       for(let i = 100; i < 100000; i++){
+           if(checkSoTuMan(i)){
+               document.write(`${i} là số tự mãn <br>`);
+           }
+       }
+
+    </script>
+    
+</body>
+</html>
